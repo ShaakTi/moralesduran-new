@@ -1,9 +1,18 @@
 ---
-import { SITE } from 'astrowind:config';
+import logoClaro from '~/assets/images/mrm-oscuro.png';
+import logoOscuro from '~/assets/images/mrm-claro.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<a href="/">
+  <img
+    src={logoOscuro.src}
+    alt="Marco R. Morales"
+    class="block dark:hidden h-14"
+  />
+
+  <img
+    src={logoClaro.src}
+    alt="Marco R. Morales"
+    class="hidden dark:inline h-14"
+  />
+</a>

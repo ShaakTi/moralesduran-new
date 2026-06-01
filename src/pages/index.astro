@@ -2,135 +2,111 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { ACTION_QUERY_PARAMS } from 'astro:actions';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Mientras El Tiempo Se Detenga — Marco R. Morales',
+  description: 'Ficción histórica ambientada en La Antigua Guatemala. Siglo XVIII, secretos coloniales, y un reloj que guarda el eco de historias jamás contadas.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+
+  <!-- Hero ******************* -->
 
   <Hero
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Lee un fragmento ',
+        href: '/descargas',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Descubre la experiencia', href: '#experience' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/libros-MTD.png', alt: 'Mientras El Tiempo Se Detenga — portada del libro' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro v6</span> + Tailwind CSS
+      ¿Qué ocurriría si pudieras<br />
+      <span class="text-accent dark:text-white">detener el tiempo?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro v6 +
-        Tailwind CSS v4.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.
+      Muchos concuerdan que pareciera que en la Antigua Guatemala, el tiempo pareciera haberse detenido. <strong>Mientras El Tiempo Se Detenga</strong> mezcla una hermosa historia de amor con misterio y ficción en una aventura donde el tiempo quizá no obedezca las reglas que conocemos.
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
+  <!-- Entra al universo ******************* -->
 
   <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023, 2024 and 2025."
+    id="capitulos"
+    tagline="Empieza aquí"
+    title="Elige cómo entrar a la historia"
+    subtitle="Entra al universo narrativo de Gregorio y Celina a través de estas experiencias. Cada una te ofrece una forma distinta de descubrir esta historia que cautivará tu corazón y tu imaginación."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Leer la novela',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility. Now powered by Tailwind CSS v4.',
-        icon: 'tabler:brand-tailwind',
+          'Descubre el misterio del reloj y los secretos ocultos durante siglos. Un artefacto que no solo mide las horas, sino que guarda el eco de historias jamás contadas.',
+        icon: 'tabler:book',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Vivir la experiencia',
         description:
-          'Widgets made with Tailwind CSS v4 ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Camina por las calles de La Antigua Guatemala y sigue las huellas de Gregorio. Cada rincón tiene una historia que contar.',
+        icon: 'tabler:map-pin',
       },
       {
-        title: 'Best Practices',
+        title: 'Escuchar la canción',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Una hermosa pieza musical que captura la esencia de la historia. Inspirada en las palabras que Gregorio nunca olvidó',
+        icon: 'tabler:music',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Desbloquear contenido oculto',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Capítulos extra, escenas inéditas y secretos que solo los lectores más curiosos podrán descubrir. Avances de la secuela que ya se encuentra en desarrollo.',
+        icon: 'tabler:key',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Libro **************** -->
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="La Novela"
+    title="Mientras El Tiempo Se Detenga"
     items={[
       {
-        title: 'Built on top of Astro v6',
+        title: 'Romance y misterio',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'Una hermosa historia de amor que literalmente rompe las barreras del tiempo. Ambientada en la Antigua Guatemala del siglo XVIII, entenderás por qué el tiempo parece haberse detenido aquí.',
       },
       {
-        title: 'Styled using Tailwind CSS v4',
+        title: 'Ficción histórica',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'Siente cómo cambia tu percepción de la Antigua Guatemala mientras conoces personajes reales y ficticios en una trama que cautivará tu imaginación.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Un universo en expansión',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'El libro ha inspirado música, una secuela y hasta un tour por las calles de Antigua Guatemala. Además de un capítulo extra exclusivo',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/book-illustration.jpg',
+      alt: 'Mientras El Tiempo Se Detenga — ilustración del libro',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Qué ocurre cuando el tiempo deja de obedecer sus propias reglas?</h3>
+      Te fascinará leer lo que el reloj del Arco de Santa Catalina tuvo el poder de hacer.
     </Fragment>
 
     <Fragment slot="bg">
@@ -138,261 +114,211 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Celina's Enigma **************** -->
 
   <Content
     isAfterContent
+    tagline="La Experiencia"
+    title="Celina's Enigma"
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'Camina dentro de la historia',
+        description:
+          'Lo que muchos describen como un tour literario, es en realidad toda una experiencia que confluye una historia de amor, misterio y ficción.',
       },
       {
-        title: 'Multiple layout possibilities',
+        title: 'Una experiencia inolvidable',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          'Aun si no has leído el libro, este es un fascinante punto de partida para adentrarte en este universo narrativo. Y si ya lo leíste, será un regalo especial que conecta con la historia de la novela.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'Resuelve el enigma',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'Nunca volverás a ver La Antigua Guatemala con los mismos ojos. Prestarás atención a todos sus detalles y cada vez que vayas la experimentarás de forma distinta.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: '~/assets/images/celinas-enigma.jpg',
+      alt: 'Tour narrativo por La Antigua Guatemala — Celina’s Enigma',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la ciudad.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Extras **************** -->
+
+  <Features
+    id="extras"
+    tagline="Contenido extra"
+    title="La historia continúa"
+    subtitle="<strong>Mientras El Tiempo Se Detenga</strong> ha dado lugar a una experiencia de muchos matices. Algunas de estas facetas están disponibles solamente para los lectores, otras para quienes quieran vivieron la experiencia de recorrer las calles de Antigua Guatemala siguiendo las huellas de Gregorio. Y otras más para cualquiera que desee explorar los obsequios que tenemos en nuestra sección de contenido extra."
+    items={[
+      {
+        title: 'Capítulo extra exclusivo',
+        description:
+          'Disponible solamente para quienes han adquirido el libro. Se requerirá prueba de compra. Ten a la mano el código que viene incluido en tu copia física o en tu correo si compraste la versión digital.',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Avances de la secuela',
+        description:
+          '<strong>Mientras El Tiempo Se Detenga</strong> es solamente el inicio de una nueva aventura. El título, avances y otros detalles se compartirán exclusivamente con los lectores.',
+        icon: 'tabler:scan-eye',
+      },
+      {
+        title: 'La canción de Gregorio',
+        description:
+          'Esta hermosa melodía tenía que existir, aunque no fuera parte de la novela. Disponible para cualquiera que quiera escucharla, pero con algunos detalles disponibles solamente para los lectores. Inspirada en las palabras que Gregorio nunca olvidó.',
+        icon: 'tabler:music',
+      },
+      {
+        title: 'Merchandising exclusivo',
+        description:
+          'Todos los souvenirs, recuerdos y objetos que se ofrecen durante la gira <strong>Celina’s Enigma</strong> también pueden conseguirse aquí. Artículos que son un pedacito de esta historia que querrás llevar contigo.',
+        icon: 'tabler:paper-bag',
+      },
+    ]}
+  />
+
+  <!-- Sobre el autor **************** -->
 
   <Content
     isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
+    tagline="Autor"
+    title="Marco R. Morales"
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: '~/assets/images/myPortrait.jpg',
+      alt: 'Marco R. Morales — autor de Mientras El Tiempo Se Detenga',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sobre el autor</h3>
+      <p><strong>Marco R. Morales</strong> es escritor, diseñador gráfico y docente de inglés. Nació en El Salvador y vive en Guatemala, donde pasa buena parte del tiempo alternando entre proyectos creativos, enseñanza y nuevas ideas que suelen aparecer en momentos poco convenientes.</p>
+      <p><strong>Mientras El Tiempo Se Detenga</strong> surgió de una pregunta sencilla: ¿por qué parece que el tiempo se ha detenido en Antigua? Lo que comenzó como una idea terminó convirtiéndose en el universo que aún está creciendo.</p>
+      <p>Aunque su trabajo principal ha estado ligado durante años a la enseñanza del inglés y al diseño, también ha desarrollado aplicaciones móviles, creado ilustraciones y explorado distintas formas de contar historias. Prefiere pensar que la creatividad rara vez se queda dentro de una sola profesión.</p>
+      <p>No suele considerarse una figura pública ni alguien especialmente interesado en construir una imagen de autor. Le atraen más las historias, el cyberpunk (!) y las preguntas difíciles: esas que aparecen tarde por la noche y ya no dejan dormir.</p>
+    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+  <!-- Precios ******************* -->
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS v4"
-    tagline="Components"
-    items={[
+  <Pricing
+    id="precio"
+    title="Elige tu formato"
+    subtitle="Compra directamente aquí a mejor precio que en cualquier otra plataforma."
+    prices={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'E-Book',
+        subtitle: 'ePub, AZW3 o PDF — entrega inmediata',
+        price: '10.35',
+        period: 'USD',
+        items: [
+          { description: 'Formato ePub (Kindle, Apple Books)' },
+          { description: 'Formato AZW3' },
+          { description: 'Formato PDF' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToAction: {
+          text: 'Comprar E-Book',
+          href: '#',
+        },
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: 'Copia Física — Guatemala',
+        subtitle: 'Envío por courier',
+        price: '160',
+        period: 'GTQ',
+        items: [
+          { description: 'Entrega de 2 a 4 días hábiles' },
+          { description: 'Envío por courier en Guatemala' },
+          { description: 'Pago por transferencia Banco Industrial' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToAction: {
+          text: 'Comprar en Guatemala',
+          href: 'https://wa.me/50252803506',
+          target: '_blank',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Popular',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro v6 + Tailwind CSS v4.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        title: 'Copia Física — EE.UU.',
+        subtitle: 'Envío desde Lulu.com',
+        price: '20.50',
+        period: 'USD',
+        items: [
+          { description: 'Impresión y envío desde Lulu.com' },
+          { description: 'Dos semanas de margen de entrega' },
+          { description: 'Envío a cualquier dirección en EE.UU.' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToAction: {
+          text: 'Comprar en EE.UU.',
+          href: '#',
+        },
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
+  <!-- Testimonios ******************* -->
 
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+  <Testimonials
+    title="Esto dicen lectores como tú"
+    subtitle="Comparte tu experiencia en redes sociales o escríbeme directamente. Tus comentarios son muy importantes."
+    testimonials={[
+      {
+        testimonial:
+          'Caminar en las calles de la ciudad colonial ahora, después de haber leído el libro, es toda una exquisitez. No puedo dejar de imaginarme a mí mismo en el pasado mientras contemplo las iglesias, los conventos y por supuesto, el Arco.',
+        name: 'Omar F.',
+      },
+      {
+        testimonial:
+          'Sus enigmáticas alusiones a detalles arquitectónicos y artísticos de la que llegara a ser una mítica ciudad del recuerdo, y sus emocionantes escenas de acción y suspenso mantienen al lector absorto en el desenvolvimiento de los hechos y enamorado de los pintorescos personajes.',
+        name: 'Judah-Ben M.',
+      },
+      {
+        testimonial:
+          'Te sumerges tanto en la lectura que olvidas que no es real. El final ni lo cuento, pero valió la pena cada página. Tiene suspenso, risa, amor y drama.',
+        name: 'Daniela M.',
+      },
+      {
+        testimonial:
+          'La próxima vez que vaya a La Antigua la voy a ver con unos ojos totalmente distintos. Es una historia que me ha cautivado, por lo que recomiendo mucho este libro.',
+        name: 'Mafer R.',
+      },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Call to Action ******************* -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Comenzar la experiencia',
+        href: '#precio',
+        icon: 'tabler:backpack',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+     La historia no termina<br class="block sm:hidden" />
+      <span class="sm:whitespace-nowrap"> al cerrar el libro.</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Si has llegado hasta aquí, es momento que permitas que esta historia te cautive. Elige tu formato, o haz la reservación para el Enigma de Celina. No importa la ruta que elijas. Estás a mitad de camino.
     </Fragment>
   </CallToAction>
+
 </Layout>
