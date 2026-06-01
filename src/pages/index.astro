@@ -57,7 +57,7 @@ const metadata = {
       {
         title: 'Vivir la experiencia',
         description:
-          'Camina por las calles de La Antigua Guatemala y sigue las huellas de Gregorio. Cada rincón tiene una historia que contar.',
+          'Ven a caminar por las calles de La Antigua Guatemala y sigue las huellas de Gregorio. Tus guías te ayudarán a sentir la historia.',
         icon: 'tabler:map-pin',
       },
       {
@@ -116,7 +116,6 @@ const metadata = {
   <!-- Celina's Enigma **************** -->
 
   <Content
-    isAfterContent
     tagline="La Experiencia"
     title="Celina's Enigma"
     items={[
@@ -144,44 +143,9 @@ const metadata = {
     <Fragment slot="content">Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la ciudad.</Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-[var(--aw-color-bg-page)] dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Extras **************** -->
-
-  <Features
-    id="extras"
-    tagline="Contenido extra"
-    title="La historia continúa"
-    subtitle="<strong>Mientras El Tiempo Se Detenga</strong> ha dado lugar a una experiencia de muchos matices. Algunas de estas facetas están disponibles solamente para los lectores, otras para quienes quieran vivieron la experiencia de recorrer las calles de Antigua Guatemala siguiendo las huellas de Gregorio. Y otras más para cualquiera que desee explorar los obsequios que tenemos en nuestra sección de contenido extra."
-    items={[
-      {
-        title: 'Capítulo extra exclusivo',
-        description:
-          'Disponible solamente para quienes han adquirido el libro. Se requerirá prueba de compra. Ten a la mano el código que viene incluido en tu copia física o en tu correo si compraste la versión digital.',
-        icon: 'tabler:book',
-      },
-      {
-        title: 'Avances de la secuela',
-        description:
-          '<strong>Mientras El Tiempo Se Detenga</strong> es solamente el inicio de una nueva aventura. El título, avances y otros detalles se compartirán exclusivamente con los lectores.',
-        icon: 'tabler:scan-eye',
-      },
-      {
-        title: 'La canción de Gregorio',
-        description:
-          'Esta hermosa melodía tenía que existir, aunque no fuera parte de la novela. Disponible para cualquiera que quiera escucharla, pero con algunos detalles disponibles solamente para los lectores. Inspirada en las palabras que Gregorio nunca olvidó.',
-        icon: 'tabler:music',
-      },
-      {
-        title: 'Merchandising exclusivo',
-        description:
-          'Todos los souvenirs, recuerdos y objetos que se ofrecen durante la gira <strong>Celina’s Enigma</strong> también pueden conseguirse aquí. Artículos que son un pedacito de esta historia que querrás llevar contigo.',
-        icon: 'tabler:paper-bag',
-      },
-    ]}
-  />
 
   <!-- Sobre el autor **************** -->
 

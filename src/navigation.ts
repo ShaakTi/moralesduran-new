@@ -24,60 +24,37 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Explora',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Inicio', href: getPermalink('/') },
+        { text: 'La Novela', href: getPermalink('/mientras') },
+        { text: 'El Autor', href: getPermalink('/autor') },
+        { text: 'Celina’s Enigma', href: getPermalink('/tour') },
+        { text: 'Extras', href: getPermalink('/unlock') },
       ],
     },
     {
-      title: 'Platform',
+      title: 'La historia',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Mientras El Tiempo Se Detenga', href: getPermalink('/mientras') },
+        { text: 'Capítulo extra', href: getPermalink('/unlock') },
+        { text: 'El tour en Antigua', href: getPermalink('/tour') },
       ],
     },
     {
-      title: 'Support',
+      title: 'Contacto',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Escríbeme', href: getPermalink('/contacto') },
+        { text: 'Goodreads', href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws' },
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
+  secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'TikTok', icon: 'tabler:brand-tiktok', href: '#' },
+    { ariaLabel: 'Goodreads', icon: 'tabler:book', href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws' },
   ],
   footNote: `
     © ${new Date().getFullYear()}. Marco Rolando Morales Durán. Todos los derechos reservados.
