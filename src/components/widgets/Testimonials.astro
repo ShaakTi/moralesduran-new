@@ -71,7 +71,7 @@ const shuffledTestimonials = [...testimonials].sort(() => Math.random() - 0.5);
       <button
         type="button"
         data-testimonials-prev
-        class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)] shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
+        class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
         aria-label="Previous testimonial"
       >
     ‹
@@ -80,15 +80,15 @@ const shuffledTestimonials = [...testimonials].sort(() => Math.random() - 0.5);
       <button
         type="button"
         data-testimonials-next
-        class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)] shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
+        class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
         aria-label="Next testimonial"
       >
         ›
       </button>
   </div>
 
-  <div class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[var(--aw-color-bg-page)] to-transparent"></div>
-  <div class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[var(--aw-color-bg-page)] to-transparent"></div>
+  <div class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[var(--aw-color-bg-page)]/35 to-transparent"></div>
+  <div class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[var(--aw-color-bg-page)]/35 to-transparent"></div>
 
   {
     callToAction && (
