@@ -12,7 +12,7 @@ export const headerData = {
     },
     {
       text: 'Celina’s Enigma',
-      href: '/tour',
+      href: '/celinas-enigma',
     },
     {
       text: 'Extras',
