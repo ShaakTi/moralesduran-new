@@ -4,15 +4,21 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features from '~/components/widgets/Features.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
 import CelinaWalking from '~/assets/images/CelinaWalking.png';
+import LibrosMTD from '~/assets/images/Libros-MTD.jpg';
+import EnigmaGallery from '~/components/widgets/EnigmaGallery.astro';
+import SanAgustin from '~/assets/images/SanAgustin.png'; 
+import AntiguaArco from '~/assets/images/AntiguaArco.jpg';
+import Esquisuchil from '~/assets/images/esquisuchil.jpg';
+import SanJose from '~/assets/images/SanJose.jpg';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'El Enigma de Celina',
 };
 ---
 
@@ -22,7 +28,7 @@ const metadata = {
 
   <Hero
     id="hero"
-    title="Celina's Enigma"
+    title="El Enigma de Celina"
     tagline="Una nueva experiencia en Antigua Guatemala"
     actions={[
       { variant: 'primary',
@@ -104,7 +110,7 @@ const metadata = {
     ]}
   />
 
-  <!-- Steps Widget ****************** -->
+  <!-- ¿Qué me espera? ****************** -->
 
   <Steps
     id="tour"
@@ -128,44 +134,134 @@ const metadata = {
         description: 'Recorrerás iglesias, plazas y conventos históricos. Cada parada es una pieza clave para resolver el enigma. Además, tu guía te contará la historia real detrás de cada lugar, haciendo que la experiencia sea tanto educativa como entretenida.',
         icon: 'tabler:backpack',
       },
+      {
+        title:
+          'Descubre el secreto',
+        description: 'Nada más reconfortante que ver ante tus ojos cómo las piezas del rompecabezas encajan. Habrás descubierto la verdad detrás de Celina, y también habrás vivido una experiencia única e inolvidable en Antigua Guatemala.',
+        icon: 'tabler:unlink',
+      },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Content Widget **************** -->
+    <!-- Entra al universo ******************* -->
 
-  <Content
-    id="porfolio"
-    title="Elevating visual narratives"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
-    isReversed
+  <Features
+    id="incluye"
+    tagline="Todo lo que necesitas para vivir el enigma"
+    title="¿Qué incluye la experiencia?"
+    subtitle="Cada detalle de Celina's Enigma ha sido pensado para que disfrutes Antigua Guatemala de una forma diferente. Más que un recorrido histórico, vivirás una historia interactiva inspirada en una novela, acompañado por guías apasionados por la ciudad y sus secretos."
     items={[
       {
-        title: 'Description:',
+        title: 'Guía certificado',
         description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+          'Conduce la experiencia un guía profesional acreditado, conocedor de la historia, la cultura y las leyendas de Antigua Guatemala.',
+        icon: 'tabler:id-badge-2',
       },
       {
-        title: 'Role:',
+        title: 'Narración interactiva',
         description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          'No serás un espectador. Formarás parte de una historia que se desarrolla paso a paso mientras recorres la ciudad.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Lugares con historia',
+        description:
+          'Iglesias, conventos, plazas y rincones cargados de relatos que conectan la ficción con la Antigua real.',
+        icon: 'tabler:building-bridge-2',
+      },
+      {
+        title: 'Grupo pequeño',
+        description:
+          'Los grupos reducidos permiten una experiencia más cercana, participativa y personalizada para todos los asistentes.',
+        icon: 'tabler:users-group',
       },
     ]}
+  />
+
+  <EnigmaGallery
+    id="escenarios"
+    slides={[
+      {
+        title: 'La joven del Arco',
+        description: 'Todo comenzó con una novicia que ocultó sus mensajes entre las calles de Antigua. Sus pasos dejaron pistas por toda la ciudad, esperando a ser descubiertas siglos después.',
+        image: {
+          src: CelinaWalking,
+          alt: 'Celina caminando bajo el Arco de Santa Catalina',
+        },
+      },
+      {
+        title: 'El punto donde todo comenzó',
+        description: 'El Arco de Santa Catalina marca el inicio de la búsqueda y el primer secreto del enigma.',
+        image: {
+          src: AntiguaArco,
+          alt: 'Arco de Santa Catalina en Antigua Guatemala',
+        },
+      },
+      {
+        title: 'Un mensaje escondido',
+        description: 'Entre hermosas letras dirigidas a enamorar a alguien, hay un mensaje que solo los más atentos podrán descifrar. Observa, escucha, siente y hasta huele. Sólo los detalles podrán acercarte a Celina.',
+        image: {
+          src: Esquisuchil,
+          alt: 'Patio de la Cooperación Española en Antigua Guatemala',
+        },
+      },
+      {
+        title: 'Tras los muros del convento',
+        description: 'Si miras atentamente, quizás veas a Celina asomada a una ventana del convento de San Agustín. Este es el acertijo que terminó frustrando a Gregorio.',
+        image: {
+          src: SanAgustin,
+          alt: 'Convento de San Agustín en Antigua Guatemala',
+        },
+      },
+      {
+        title: 'Secretos bajo tierra',
+        description: 'Bajo las imponentes ruinas de la Catedral de San José, sentirás en la oscuridad la cercanía de la conclusión del enigma. En ese lugar sombrío pensarás que sería el lugar menos indicado para un encuantro romántico.',
+        image: {
+          src: SanJose,
+          alt: 'Catedral de San José en Antigua Guatemala',
+        },
+      },
+    ]}
+  />
+
+  <!-- Sobre la novela **************** -->
+
+  <Content
+    id="novela"
+    title="La Historia Detrás del Enigma"
+    subtitle="Celina's Enigma está inspirado en la novela <strong>Mientras El Tiempo Se Detenga</strong>, una historia de misterio, fantasía y amor imposible ambientada en Antigua Guatemala en 1773."
+    isReversed
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-      alt: 'Tech Design Image',
+      src: LibrosMTD,
+      alt: 'Copia Física de la novela Mientras El Tiempo Se Detenga',
     }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
+    callToActions={[
+      {
+        target: '_blank',
+        text: 'Consigue tu ejemplar',
+        icon: 'tabler:chevron-right',
+        href: '#',
+      },
+      {
+        target: '_blank',
+        text: 'Lee un fragmento',
+        icon: 'tabler:chevron-right',
+        href: '#',
+      },
+    ]}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+        Mientras El Tiempo Se Detenga
       </h3>
+      <p>
+        Un reloj de origen misterioso es instalado en el puente del Arco de Santa Catalina. El relojero Gregorio Del Cid, al intentar ajustar sus manecillas —que no pueden moverse manualmente— descubre que al detener su mecanismo, el tiempo mismo se detiene.
+      </p>
+      <br />
+      <p>
+        El mundo queda suspendido, sin gravedad, sin sonido, sin movimiento: un intervalo de diez "segundos" en los que solo él puede moverse. Ese accidente abre una historia de amor imposible, ambición, decisiones cuestionables, redención y tragedia, todo enmarcado en el reloj que literalmente gobierna el tiempo.
+      </p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -173,140 +269,31 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent={true}
-    items={[
-      {
-        title: 'Description:',
-        description:
-          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
-      },
-      {
-        title: 'Role:',
-        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Art and Music Poster Image',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent={true}
-    items={[
-      {
-        title: 'Description:',
-        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
-      },
-      {
-        title: 'Role:',
-        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1664455340023-214c33a9d0bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Fashion e-commerce Image',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
+  <!-- Testimonios ******************* -->
 
   <Testimonials
-    title="Client testimonials"
-    subtitle="Discover what clients have to say about their experiences working with me."
+    title="Esto dicen lectores como tú"
+    subtitle="Comparte tu experiencia en redes sociales o escríbeme directamente. Tus comentarios son muy importantes."
     testimonials={[
       {
-        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
-        name: 'Mark Thompson',
-        job: 'Creative director',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
-        },
+        testimonial:
+          'Caminar en las calles de la ciudad colonial ahora, después de haber leído el libro, es toda una exquisitez. No puedo dejar de imaginarme a mí mismo en el pasado mientras contemplo las iglesias, los conventos y por supuesto, el Arco.',
+        name: 'Omar F.',
       },
       {
-        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
-        name: 'Emily Martinez',
-        job: 'CEO',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-          alt: 'Emily Martinez Image',
-        },
+        testimonial:
+          'Sus enigmáticas alusiones a detalles arquitectónicos y artísticos de la que llegara a ser una mítica ciudad del recuerdo, y sus emocionantes escenas de acción y suspenso mantienen al lector absorto en el desenvolvimiento de los hechos y enamorado de los pintorescos personajes.',
+        name: 'Judah-Ben M.',
       },
       {
-        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
-        name: 'Laura Simmons',
-        job: 'Founder of an NGO',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Laura Simmons Image',
-        },
+        testimonial:
+          'Te sumerges tanto en la lectura que olvidas que no es real. El final ni lo cuento, pero valió la pena cada página. Tiene suspenso, risa, amor y drama.',
+        name: 'Daniela M.',
       },
       {
-        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
-        name: 'Alex Foster',
-        job: 'Director of web services',
-        image: {
-          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Alex Foster Image',
-        },
-      },
-      {
-        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
-        name: 'Jessica Collins',
-        job: 'Product Manager',
-        image: {
-          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
-          alt: 'Jessica Collins Image',
-        },
-      },
-      {
-        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
-        name: 'Michael Carter',
-        job: 'Event Coordinator',
-        image: {
-          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Michael Carter Image',
-        },
+        testimonial:
+          'La próxima vez que vaya a La Antigua la voy a ver con unos ojos totalmente distintos. Es una historia que me ha cautivado, por lo que recomiendo mucho este libro.',
+        name: 'Mafer R.',
       },
     ]}
   />
@@ -314,26 +301,15 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    title="Let's create together"
-    subtitle="Ready to transform your vision into captivating designs?"
+    title="Algunas historias concluyen al cerrar el libro."
+    subtitle="Esta empieza cuando comienzas a caminar."
     actions={[
       {
         variant: 'primary',
-        text: 'Hire me',
-        href: '/',
+        text: 'Reserva mi experiencia',
+        href: '#',
       },
     ]}
   />
 
-  <!-- BlogLatestPost Widget **************** -->
-
-  <BlogLatestPosts
-    id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
 </Layout>

@@ -12,6 +12,7 @@ const {
   tagline,
   content = await Astro.slots.render('content'),
   callToAction,
+  callToActions = [],
   items = [],
   columns,
   image = await Astro.slots.render('image'),
@@ -56,9 +57,11 @@ const columnsClass =
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
-          callToAction && (
-            <div class="mt-[-40px] mb-8 text-primary">
-              <Button variant="link" {...callToAction} />
+          (callToActions.length > 0 || callToAction) && (
+            <div class="mt-[-28px] mb-8 flex flex-wrap gap-x-6 gap-y-2 text-primary">
+              {(callToActions.length > 0 ? callToActions : [callToAction]).map((action) => (
+                <Button variant="link" {...action} />
+              ))}
             </div>
           )
         }
