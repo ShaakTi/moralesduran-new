@@ -16,6 +16,7 @@ import SanAgustin from '~/assets/images/SanAgustin.png';
 import AntiguaArco from '~/assets/images/AntiguaArco.jpg';
 import Esquisuchil from '~/assets/images/esquisuchil.jpg';
 import SanJose from '~/assets/images/SanJose.jpg';
+import CelinaWindow from '~/assets/images/CelinathruWindow.png';
 
 const metadata = {
   title: 'El Enigma de Celina',
@@ -177,7 +178,11 @@ const metadata = {
         icon: 'tabler:users-group',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
 
   <EnigmaGallery
     id="escenarios"
@@ -186,8 +191,8 @@ const metadata = {
         title: 'La joven del Arco',
         description: 'Todo comenzó con una novicia que ocultó sus mensajes entre las calles de Antigua. Sus pasos dejaron pistas por toda la ciudad, esperando a ser descubiertas siglos después.',
         image: {
-          src: CelinaWalking,
-          alt: 'Celina caminando bajo el Arco de Santa Catalina',
+          src: CelinaWindow,
+          alt: 'Celina asomando a una ventana del claustro de Santa Catalina.',
         },
       },
       {
@@ -310,6 +315,10 @@ const metadata = {
         href: '#',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>
 
 </Layout>
