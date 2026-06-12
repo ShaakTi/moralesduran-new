@@ -1,10 +1,10 @@
-import { getPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
       text: 'La Novela',
-      href: '/mientras',
+      href: '/la-novela',
     },
     {
       text: 'El Autor',
@@ -27,16 +27,16 @@ export const footerData = {
       title: 'Explora',
       links: [
         { text: 'Inicio', href: getPermalink('/') },
-        { text: 'La Novela', href: getPermalink('/mientras') },
+        { text: 'La Novela', href: getPermalink('/la-novela') },
         { text: 'El Autor', href: getPermalink('/autor') },
-        { text: 'Celina’s Enigma', href: getPermalink('/tour') },
+        { text: 'Celina’s Enigma', href: getPermalink('/celinas-enigma') },
         { text: 'Extras', href: getPermalink('/unlock') },
       ],
     },
     {
       title: 'La historia',
       links: [
-        { text: 'Mientras El Tiempo Se Detenga', href: getPermalink('/mientras') },
+        { text: 'Mientras El Tiempo Se Detenga', href: getPermalink('/la-novela') },
         { text: 'Capítulo extra', href: getPermalink('/unlock') },
         { text: 'El tour en Antigua', href: getPermalink('/tour') },
       ],

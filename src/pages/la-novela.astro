@@ -1,0 +1,314 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import EnigmaGallery from '~/components/widgets/EnigmaGallery.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Gregorio from '~/assets/images/Gregorio.png';
+import SantaCatalina_arco from '~/assets/images/SantaCatalina_arco.jpg';
+import SanAgustin from '~/assets/images/SanAgustin.jpg';
+import StaClara from '~/assets/images/StaClara.jpg';
+import TourPromo from '~/assets/images/CelinasEnigma-Promo.png';
+import LeadMagnetModal from '~/components/widgets/LeadMagnetModal.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Mientras El Tiempo Se Detenga - La Novela',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Mientras El Tiempo Se Detenga"
+    tagline="La Novela"
+    actions={[
+      { variant: 'primary',
+      text: 'Compra el libro',
+      href: getPermalink('/contact#form'),
+      },
+      { variant: 'secondary',
+      text: 'Lee un fragmento',
+      href: "#fragmento",
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      Antigua Guatemala, 1773. Un joven relojero descubre que puede detener el tiempo. Pero cada vez que lo hace, algo irremplazable se pierde.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-instagram',
+        callToAction: {
+          target: '_blank',
+          text: 'Instagram',
+          href: '#',
+        },
+      },
+      {
+        icon: 'tabler:brand-facebook',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: '#',
+        },
+      },
+    ]}
+    image={{
+      src: Gregorio,
+      alt: 'Gregorio looking upward',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Un reloj. Un secreto. Una ciudad suspendida entre el pasado y el presente.</h2>
+      <p>
+        Gregorio Del Cid jamás imaginó que un antiguo reloj ocultaba un secreto capaz de alterar la realidad.
+      </p>
+      <br />
+      <p>
+        Mientras la ciudad de Santiago de los Caballeros se prepara para enfrentar los terremotos que cambiarán su destino para siempre, Gregorio deberá decidir cuánto está dispuesto a sacrificar por amor.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="¿Por qué esta historia es diferente?"
+    subtitle="Descubrirás una novela que combina historia, misterio y romance en un entorno real pero mágico, con personajes que te acompañarán mucho después de cerrar el libro."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Una ciudad real',
+        description: 'La historia transcurre en la Antigua Guatemala del siglo XVIII y está inspirada en lugares que aún puedes visitar. Leerás sobre eventos y personajes que existieron pero que viven en un entorno ficticio.',
+      },
+      {
+        title: 'Un misterio sobrenatural',
+        description: 'El reloj sobre el arco de Santa Catalina alguna vez fue capaz de detener el tiempo, alterando el destino de todos los que lo rodean y de la percepción que tú tienes de esa ciudad.',
+      },
+      {
+        title: 'Personajes inolvidables',
+        description: 'Gregorio, Celina, Don Cristóbal y otros personajes deberán tomar decisiones que los marcarán para siempre. Cuando camines por las calles de la Antigua los recordarás como si los hubieras conocido en persona.',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <EnigmaGallery
+    id="escenarios"
+    tagline="La ciudad detenida en el tiempo"
+    title="Los escenarios de la novela"
+    subtitle="Las calles, conventos y ruinas que aparecen en la novela siguen formando parte de Antigua Guatemala. Algunos guardan secretos. Otros esconden respuestas."
+    slides={[
+      {
+        title: 'El Arco de Santa Catalina',
+        description: 'El reloj marcaba una hora imposible.',
+        image: {
+          src: SantaCatalina_arco,
+          alt: 'El icónico Arco de Santa Catalina en Antigua Guatemala.',
+        },
+      },
+      {
+        title: 'Convento de Santa Clara',
+        description: 'Figuras que observan en silencio esperando ser descubiertas.',
+        image: {
+          src: StaClara,
+          alt: 'Convento de Santa Clara en Antigua Guatemala.',
+        },
+      },
+      {
+        title: 'Templo de San Agustín',
+        description: 'La respuesta había estado frente a él todo el tiempo.',
+        image: {
+          src: SanAgustin,
+          alt: 'Templo de San Agustín en Antigua Guatemala.',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Comienza la historia ahora mismo"
+    subtitle="Recibe gratuitamente el prólogo y el primer capítulo en tu correo electrónico."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Lee el fragmento',
+        href: '#fragmento',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>
+
+  <!-- FAQs Widget **************** -->
+
+  <FAQs
+    id="preguntas-frecuentes"
+    tagline="PREGUNTAS FRECUENTES"
+    title="Lo que debes saber antes de detener el tiempo"
+    subtitle="Algunas respuestas para quienes les despierta la curiosidad adentrarse en la historia de Gregorio y Celina."
+    columns={1}
+    items={[
+      {
+        title: '¿Es una novela histórica?',
+        description:
+          'Sí. La historia se desarrolla en Santiago de los Caballeros de Guatemala (hoy Antigua Guatemala) durante los meses previos al gran terremoto de 1773. Muchos de los lugares, personajes históricos y acontecimientos descritos están basados en hechos reales.',
+      },
+      {
+        title: '¿Es una historia de fantasía?',
+        description:
+          'Tiene un elemento sobrenatural central: un reloj capaz de detener el tiempo. Sin embargo, la novela está narrada desde una perspectiva realista y se apoya fuertemente en el contexto histórico de la época.',
+      },
+      {
+        title: '¿Necesito conocer Antigua Guatemala para disfrutarla?',
+        description:
+          'No. La novela está escrita para cualquier lector. De hecho, se proporciona un mapa basado en una obra de arte de un artista local para ubicar geográficamente al lector. Sin embargo, quienes conocen Antigua descubrirán lugares, calles y monumentos que siguen formando parte de la ciudad hasta nuestros días.',
+      },
+      {
+        title: '¿Está basada en hechos reales?',
+        description:
+          'La historia de Gregorio y Celina es ficción, pero ocurre dentro de un escenario histórico cuidadosamente investigado. Muchos de los acontecimientos y personajes secundarios existieron realmente.',
+      },
+      {
+        title: '¿Es apta para adolescentes?',
+        description:
+          'Sí. La novela puede ser disfrutada tanto por jóvenes como por adultos. Combina aventura, misterio, romance e historia sin depender de contenido explícito.',
+      },
+      {
+        title: '¿Cuántas páginas tiene?',
+        description:
+          'La edición actual cuenta con aproximadamente 260 páginas.',
+      },
+      {
+        title: '¿Existe una versión en inglés?',
+        description:
+          'Sí. <strong>While Time Stands Still</strong> es la edición en inglés de la novela y permite que lectores de todo el mundo descubran esta historia ambientada en Antigua Guatemala.',
+      },
+      {
+        title: '¿Existe una continuación?',
+        description:
+          'Mientras El Tiempo Se Detenga cuenta una historia completa. Sin embargo, el universo narrativo continúa expandiéndose con nuevos proyectos y relatos relacionados con Gregorio y su extraordinario destino.',
+      },
+    ]}
+  />
+
+  <!-- Testimonios ******************* -->
+
+  <Testimonials
+    title="Esto dicen lectores como tú"
+    subtitle="Comparte tu experiencia en redes sociales o escríbeme directamente. Tus comentarios son muy importantes."
+    testimonials={[
+      {
+        testimonial:
+          'Caminar en las calles de la ciudad colonial ahora, después de haber leído el libro, es toda una exquisitez. No puedo dejar de imaginarme a mí mismo en el pasado mientras contemplo las iglesias, los conventos y por supuesto, el Arco.',
+        name: 'Omar F.',
+      },
+      {
+        testimonial:
+          'Sus enigmáticas alusiones a detalles arquitectónicos y artísticos de la que llegara a ser una mítica ciudad del recuerdo, y sus emocionantes escenas de acción y suspenso mantienen al lector absorto en el desenvolvimiento de los hechos y enamorado de los pintorescos personajes.',
+        name: 'Judah-Ben M.',
+      },
+      {
+        testimonial:
+          'Te sumerges tanto en la lectura que olvidas que no es real. El final ni lo cuento, pero valió la pena cada página. Tiene suspenso, risa, amor y drama.',
+        name: 'Daniela M.',
+      },
+      {
+        testimonial:
+          'La próxima vez que vaya a La Antigua la voy a ver con unos ojos totalmente distintos. Es una historia que me ha cautivado, por lo que recomiendo mucho este libro.',
+        name: 'Mafer R.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Y si pudieras caminar dentro de la historia…',
+        description:
+          'Los lugares que aparecen en la novela siguen existiendo. Ahora puedes recorrerlos y resolver los mismos acertijos que enfrentó Gregorio.',
+      },
+      {
+        title: 'Lee y vive la historia',
+        description: "Explorar la Antigua Guatemala, caminarla mientras escuchas la historia desenvolverse, será una experiencia inolvidable.",
+      },
+    ]}
+    image={{
+      src: TourPromo,
+      alt: 'El Enigma de Celina - poster promotional.',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Vive la experiencia',
+      icon: 'tabler:chevron-right',
+      href: '/celinas-enigma',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        El Enigma de Celina: <br /><span class="text-2xl">Un tour inspirado en la novela</span>
+      </h3>
+    </Fragment>
+  </Content>
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="El tiempo sigue avanzando"
+    subtitle="Excepto para Gregorio"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Compra el libro',
+        href: '/',
+      },
+      {
+        variant: 'secondary',
+        text: 'Lee un fragmento',
+        href: '#fragmento',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>  
+  <LeadMagnetModal />
+</Layout>
