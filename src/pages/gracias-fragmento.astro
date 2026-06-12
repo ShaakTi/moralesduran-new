@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Museo from '~/assets/images/museo.png';
+import Hero2 from '~/components/widgets/Hero2.astro';
+
+const metadata = {
+  title: 'Muchas gracias por tu interés',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Mientras El Tiempo Se Detenga"
+    title="Gracias por solicitar el fragmento"
+    subtitle="Revisa tu correo en unos minutos para descargar el fragmento de la novela. Mientras tanto, puedes seguir explorando el sitio y descubrir más sobre la novela y su universo. Recuerda verificar en tu carpeta de spam por si el correo se ha filtrado allí. ¡Gracias por tu interés y apoyo!"
+    actions={[
+      { variant: 'secondary', text: 'Vuelta al inicio', href: '/', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Más sobre el libro', href: '/la-novela' },
+    ]}
+    image={{
+      src: Museo,
+      alt: 'Store with a Coming Soon sign. Pre-launch Landing Page',
+    }}
+  />
+</Layout>

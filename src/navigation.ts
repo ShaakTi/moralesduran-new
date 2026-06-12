@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'El Autor',
-      href: '/autor',
+      href: '/#autor',
     },
     {
       text: 'Celina’s Enigma',
