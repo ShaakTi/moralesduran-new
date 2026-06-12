@@ -6,6 +6,8 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import LeadMagnetModal from '~/components/widgets/LeadMagnetModal.astro';
+
 
 const metadata = {
   title: 'Mientras El Tiempo Se Detenga — Marco R. Morales',
@@ -23,7 +25,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Lee un fragmento ',
-        href: '/mientras',
+        href: '#fragmento',
       },
       {
         variant: 'primary',
@@ -31,7 +33,7 @@ const metadata = {
         href: '#celinas-enigma'
       },
     ]}
-    image={{ src: '~/assets/images/libros-MTD.png', alt: 'Mientras El Tiempo Se Detenga — portada del libro' }}
+    image={{ src: '~/assets/images/libros-MTD.jpg', alt: 'Mientras El Tiempo Se Detenga — portada del libro' }}
   >
     <Fragment slot="title">
       ¿Qué ocurriría si pudieras<br />
@@ -44,6 +46,7 @@ const metadata = {
   </Hero>
 
   <!-- Entra al universo ******************* -->
+  <!-- EvaVox ******************* -->
 
   <Features
     id="capitulos"
@@ -59,6 +62,7 @@ const metadata = {
       },
       {
         title: 'Vivir la experiencia',
+        href: '/celinas-enigma',
         description:
           'Ven a caminar por las calles de La Antigua Guatemala y sigue las huellas de Gregorio. Tus guías te ayudarán a sentir la historia.',
         icon: 'tabler:map-pin',
@@ -121,7 +125,7 @@ const metadata = {
   <Content
     id="celinas-enigma"
     tagline="La Experiencia"
-    title="Celina's Enigma"
+    title="El Enigma de Celina"
     items={[
       {
         title: 'Camina dentro de la historia',
@@ -147,7 +151,7 @@ const metadata = {
     <Fragment slot="content">Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la ciudad.</Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-[var(--aw-color-bg-page)] dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-(--aw-color-bg-page) dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -264,6 +268,10 @@ const metadata = {
         name: 'Mafer R.',
       },
     ]}
-  />
-
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+  <LeadMagnetModal />
 </Layout>

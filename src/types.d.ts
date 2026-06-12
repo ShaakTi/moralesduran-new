@@ -224,6 +224,7 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   defaultIcon?: string;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+  href?: string;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {

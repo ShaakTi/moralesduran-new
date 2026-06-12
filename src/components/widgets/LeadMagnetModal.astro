@@ -1,0 +1,125 @@
+---
+const {
+  id = 'fragmento-modal',
+  title = 'Lee el primer fragmento',
+  subtitle = 'Déjame tu correo y te enviaré allí el prólogo y el primer capítulo en PDF.',
+  buttonText = 'Enviar fragmento',
+} = Astro.props;
+---
+
+<div id={id} class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4">
+  <div class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl dark:bg-slate-900">
+    <button
+      type="button"
+      class="absolute right-4 top-4 text-2xl text-gray-500 hover:text-gray-900 dark:hover:text-white"
+      data-close-modal
+      aria-label="Cerrar"
+    >
+      &times;
+    </button>
+
+    <h2 class="font-heading text-3xl text-gray-900 dark:text-white">
+      {title}
+    </h2>
+
+    <p class="mt-3 text-gray-600 dark:text-gray-300">
+      {subtitle}
+    </p>
+
+    <form
+      name="fragmento-pdf"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="mt-6 space-y-4"
+    >
+      <input type="hidden" name="form-name" value="fragmento-pdf" />
+
+      <p class="hidden">
+        <label>
+          No llenar:
+          <input name="bot-field" />
+        </label>
+      </p>
+
+      <div>
+        <label for="nombre" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">
+          Nombre
+        </label>
+        <input
+          id="nombre"
+          name="nombre"
+          type="text"
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+          placeholder="Tu nombre"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+          placeholder="tu@email.com"
+        />
+      </div>
+
+      <label class="flex gap-2 text-sm text-gray-600 dark:text-gray-300">
+        <input type="checkbox" name="consentimiento" required class="mt-1" />
+        <span>
+          Acepto recibir el PDF y comunicaciones relacionadas con el libro.
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-primary px-5 py-3 font-semibold text-white hover:opacity-90"
+      >
+        {buttonText}
+      </button>
+
+      <p class="text-center text-xs text-gray-500 dark:text-gray-400">
+        No spam. Solo cosas del universo de la novela.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+  const openButtons = document.querySelectorAll('a[href="#fragmento"]');
+  const modal = document.getElementById('fragmento-modal');
+  const closeButtons = document.querySelectorAll('[data-close-modal]');
+
+  function openModal() {
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener('click', openModal);
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', closeModal);
+  });
+
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeModal();
+  });
+</script>
