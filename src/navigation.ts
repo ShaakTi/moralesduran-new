@@ -16,7 +16,7 @@ export const headerData = {
     },
     {
       text: 'Extras',
-      href: '/unlock',
+      href: '/unlock.html',
     },
   ]
 };

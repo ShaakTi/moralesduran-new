@@ -1,0 +1,212 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Archivo del Campanario - Contenido Exclusivo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Archivo del Campanario"
+    title="Algunas historias continúan"
+  />
+  <section class="mx-auto max-w-3xl px-6 pb-12 text-center text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+    <p>
+      Gracias por adquirir una copia de <em>Mientras El Tiempo Se Detenga</em>.
+    </p>
+
+    <p>
+      Si posees una clave de acceso, podrás consultar los documentos que sobrevivieron al paso del tiempo.
+    </p>
+  </section>
+
+<section class="mx-auto max-w-3xl px-6 py-12 text-center">
+  <h2 class="text-2xl font-bold">Introduce tu clave</h2>
+
+  <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
+    <input
+      id="unlock-code"
+      type="text"
+      placeholder="Escribe tu código"
+      class="rounded-lg border border-slate-300 px-4 py-3 text-center"
+    />
+
+    <button
+      id="unlock-button"
+      type="button"
+      class="rounded-lg bg-primary px-6 py-3 font-semibold text-white"
+    >
+      Desbloquear
+    </button>
+  </div>
+
+  <p id="unlock-error" class="mt-4 hidden text-sm text-red-600">
+    Código no válido. Revisa que esté escrito correctamente.
+  </p>
+
+  <button
+    id="request-code-button"
+    type="button"
+    class="mt-8 text-sm font-semibold text-primary underline"
+  >
+    No tengo código. Necesito solicitar uno.
+  </button>
+
+
+  </section>
+
+  <section
+    id="request-code-section"
+    class="hidden opacity-0 transition-opacity duration-700"
+  >
+    <!-- Aquí va tu ContactUs -->
+  </section>
+
+  <section
+    id="exclusive-content"
+    class="hidden opacity-0 transition-opacity duration-1000"
+  >
+    <!-- Aquí va Panza Verde / contenido extra -->
+  </section>
+
+  <script>
+    const validCodes = [
+      'PANZAVERDE1773',
+      'CID-1773-X9K2',
+      'GREGORIO-2026',
+    ];
+
+    const unlockInput = document.getElementById('unlock-code');
+    const unlockButton = document.getElementById('unlock-button');
+    const unlockError = document.getElementById('unlock-error');
+    const exclusiveContent = document.getElementById('exclusive-content');
+
+    const requestButton = document.getElementById('request-code-button');
+    const requestSection = document.getElementById('request-code-section');
+
+    unlockButton?.addEventListener('click', () => {
+      const code = unlockInput.value.trim().toUpperCase();
+
+      if (validCodes.includes(code)) {
+        unlockError.classList.add('hidden');
+        exclusiveContent.classList.remove('hidden');
+
+        setTimeout(() => {
+          exclusiveContent.classList.remove('opacity-0');
+          exclusiveContent.classList.add('opacity-100');
+        }, 50);
+
+        exclusiveContent.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        unlockError.classList.remove('hidden');
+      }
+    });
+
+    requestButton?.addEventListener('click', () => {
+      requestSection.classList.remove('hidden');
+
+      setTimeout(() => {
+        requestSection.classList.remove('opacity-0');
+        requestSection.classList.add('opacity-100');
+      }, 50);
+
+      requestSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- Solicitud de acceso ******************* -->
+
+   <ContactUs
+    id="form"
+    title="Solicita tu acceso"
+    subtitle="Indica dónde adquiriste tu ejemplar y adjunta una prueba de compra. Puede ser una captura de pantalla, un correo de confirmación o una fotografía de tu factura de compra. Te enviaremos las instrucciones de acceso por correo electrónico."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Correo Electrónico',
+      },
+      {
+        type: 'text',
+        name: 'purchase',
+        label: '¿Dónde adquiriste el libro?',
+      },
+    ]}
+    textarea={{
+      label: 'Información adicional o número de pedido',
+    }}
+
+  <ContactUs
+    id="form"
+    title="Solicita tu acceso"
+    subtitle="Indica dónde adquiriste tu ejemplar y adjunta una prueba de compra. Puede ser una captura de pantalla, un correo de confirmación o una fotografía de tu factura de compra. Te enviaremos las instrucciones de acceso por correo electrónico."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Correo Electrónico',
+      },
+      {
+        type: 'text',
+        name: 'purchase',
+        label: '¿Dónde adquiriste el libro?',
+      },
+    ]}
+    textarea={{
+      label: 'Información adicional o número de pedido',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="¿Qué encontrarás aquí?"
+    items={[
+      {
+        title: 'Panza Verde',
+        description: "Una historia inédita ambientada después de los acontecimientos de la novela <em>Mientras El Tiempo Se Detenga</em>.",
+      },
+      {
+        title: 'Material adicional',
+        description:
+          "Notas, música, curiosidades históricas y contenido exclusivo relacionado con la obra y a Antigua Guatemala.",
+      },
+      {
+        title: 'Próximos proyectos',
+        description:
+          "Noticias sobre la edición en inglés, Celina's Enigma y la secuela titulada <em>Un Bolsillo de Estrellas</em>.",
+      },
+      {
+        title: 'Phone',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Location',
+        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>
