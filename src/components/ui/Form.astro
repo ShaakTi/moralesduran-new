@@ -2,32 +2,34 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Contact us', description = '', formName = 'contact' } = Astro.props;
 ---
 
-<form>
+<form name={formName} method="POST" data-netlify="true" enctype="multipart/form-data">
+  <input type="hidden" name="form-name" value={formName} />
   {
-    inputs &&
-      inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
-          name && (
-            <div class="mb-6">
-              {label && (
-                <label for={name} class="block text-sm font-medium">
-                  {label}
-                </label>
-              )}
-              <input
-                type={type}
-                name={name}
-                id={name}
-                autocomplete={autocomplete}
-                placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-              />
-            </div>
-          )
-      )
+    inputs.map(
+      ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, accept = '' }) =>
+        name && (
+          <div class="mb-6">
+            {label && (
+              <label for={name} class="block text-sm font-medium">
+                {label}
+              </label>
+            )}
+            <input
+              type={type}
+              name={name}
+              id={name}
+              autocomplete={autocomplete}
+              placeholder={placeholder}
+              required={required}
+              accept={accept}
+              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            />
+          </div>
+        )
+    )
   }
 
   {

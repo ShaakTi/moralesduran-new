@@ -1,0 +1,229 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import divider from '~/assets/images/divider.svg?url';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Extras - Archivos del Campanario',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+<div class="-mb-24 md:-mb-32">
+  <Hero
+    id="hero"
+    title="Archivos del Campanario"
+    tagline="Extras"
+  >
+    <Fragment slot="subtitle">
+      No todas las historias quedaron sepultadas bajo los escombros. "Panza Verde" es el capítulo #20 de la obra <em>Mientras El Tiempo Se Detenga</em>, y forma parte de un universo que está en constante expansión. En este espacio, podrás descubrir documentos inéditos, relatos adicionales y material exclusivo que complementa la experiencia de la novela.
+    </Fragment>
+  </Hero>
+</div>
+
+  <!-- Navigation submenu *********** -->
+
+  <nav class="sticky top-20 z-30 border-y border-slate-200 bg-white/85 backdrop-blur dark:border-slate-700 dark:bg-black/70">
+    <div class="mx-auto flex max-w-5xl items-center gap-6 overflow-x-auto px-6 py-3 text-sm font-semibold whitespace-nowrap sm:justify-center">
+      <a href="#pdf">PDF</a>
+      <span class="hidden opacity-30 sm:inline">|</span>
+
+      <a href="#capitulo">Leer capítulo</a>
+      <span class="hidden opacity-30 sm:inline">|</span>
+
+      <a href="#cancion">Canción</a>
+      <span class="hidden opacity-30 sm:inline">|</span>
+
+      <a href="#avances">Avances</a>
+      <span class="hidden opacity-30 sm:inline">|</span>
+
+      <a href="/celinas-enigma">Celina's Enigma</a>
+    </div>
+  </nav>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id='pdf'
+    classes={{ container: 'scroll-mt-32' }}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Descargar PDF',
+        href: '/pdfs/panza-verde.pdf',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="tagline">
+      Expediente Disponible
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      La versión original de Panza Verde, en el mismo formato utilizado para la edición impresa de <em>Mientras El Tiempo Se Detenga</em>.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>
+
+
+  <section id="capitulo" class="scroll-mt-32 bg-[#f7f1e7] px-6 py-16 dark:bg-[#1f1a14]">
+    <article class="mx-auto max-w-3xl text-lg leading-8 text-slate-800 dark:text-slate-200">
+      <p class="mb-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+        Capítulo 20
+      </p>
+
+      <h2 class="mb-10 text-center font-serif text-5xl text-slate-950 dark:text-white">
+        Panza Verde
+      </h2>
+
+      <p class="first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-none">
+        “Victoria está llorando de nuevo” —dijo Constanza con la esperanza que Gregorio reaccionara finalmente, después de tantos meses en profunda escasez. Victoria estaba a tan solo una semana de cumplir dos años de edad.
+      </p>
+      <p class="mt-6">
+        “Vámonos de aquí, como todos los demás” —insistió Constanza, pero el silencio de Gregorio se sumó a su desatención total: continuó labrando la árida tierra que tenían detrás de su dilapidada casa.
+      </p>
+      <p class="mt-6">
+        Todo fue una lamentable coincidencia: durante el tiempo que Gregorio estuvo exiliado voluntariamente en el Valle de la Ermita purgando su duelo por Celina, don Gilberto a su vez se encontraba de duelo él mismo en Santiago. Erróneamente creyó que Gregorio había sido una víctima más del terremoto. Para cuando Gregorio reflexionó en la importancia de hacerle saber a su dolido padre de su paradero, que había sobrevivido al terremoto, ya don Gilberto lo había dejado todo atrás. Su taller de herrería, sin techo y con sus herramientas esparcidas por el piso, apenas era un reflejo de la sonora actividad que mantenía casi todos los días. Tampoco se escuchaban las charlas animadas que sostenía por horas con su amigo don Máximo. Sólo silencio, nubes de polvo y fantasmas que recorrían el mostrador que don Gilberto utilizaba para atender a sus clientes. Estando en la nueva ciudad, probablemente don Gilberto podría darle un reinicio agridulce a su vida. Así se convirtió él en la primera estrella. Un alma altruista, rebosante de sabiduría y disciplina práctica. Que estuvo dispuesto incluso a intercambiar su libertad por la de su hijo.
+      </p>
+      <p class="mt-6">
+        Al igual que la vasta mayoría, reconstruir era un desafío descomunal. El Capitán Mayorga, con el afán de obligar a los sobrevivientes a abandonar la derruida Santiago de los Caballeros, no permitía el comercio formal o informal. Tampoco accedió a ninguna reconstrucción: todo debía trasladarse al Valle de la Ermita. Por todo esto, Gregorio nunca tuvo ni los recursos ni la motivación de reconstruir el viejo taller.
+      </p>
+      <p class="mt-6">
+        Ni hablar de regresar al centro de la ciudad. Ni siquiera ver de lejos aquel arco que fue testigo de un romance que él quiso forzar deteniendo poderes tan incontrolables como el tiempo. Hasta ese día nunca había comentado su secreto con nadie. Planeaba dejar morir ese secreto junto con él, dejando pasar deliberadamente los años para intentar paliar aunque sea por algunos momentos fugaces los brutales recuerdos que lo acosaban en sus pesadillas y lo sorprendían con lágrimas al amanecer.
+      </p>
+      <p class="mt-6">
+        Haberse conocido con Constanza mientras ella intentaba inútilmente levantar la pesada puerta de entrada que yacía como un insolente estorbo a la entrada de su casa, fue un pequeño paso hacia la sanación de su dolor.
+      </p>
+      <p class="mt-6">
+        “Voy a ver si le consigo algo que le guste comer.” –le respondió Gregorio sin verla.
+      </p>
+      <p class="mt-6">
+        “No, Gregorio. No llora porque no le gusta. Llora porque simplemente no hay nada para comer. ¿No te das cuenta que aquí ya no tenemos nada? Aún tenemos juventud como para mudarnos a...” –de inmediato la interrumpió Gregorio antes que ella terminase de sugerir su traslado al Valle de la Ermita.
+      </p>
+      <p class="mt-6">
+        “Aún produce algunos aguacates este árbol. Déjame buscar a alguien con quien los haga trueque” –Gregorio se aferraba a la tenue idea de que en algún momento, Celina aparecería en alguno de los rincones de la asolada ciudad. “Dale a la bebé… aguacates. Es lo que aún tenemos”.
+      </p>
+      <p class="mt-6">
+        Sin más, Gregorio recolectó media docena de los aguacates que tenían y se dirigió a la ciudad. Ahora carecía de calles: escombros esparcidos por doquier, facilitando torbellinos de polvo y cobijando madrigueras de ratas, tacuacines y zorros grises. Si las legumbres que producía el patio trasero de la casa de Constanza eran suficientes, se tomaban la libertad de intercambiarlos por carne en el mercado negro. Era la única forma de obtener un poco de variedad.
+      </p>
+      <p class="mt-6">
+        Apenas había pasado el umbral de la puerta de entrada, cuando Constanza gritó desde dentro: “¡GREGORIO!”
+      </p>
+      <p class="mt-6">
+        De inmediato dejó en el suelo el producto que se proponía trocar, y corrió de regreso a casa. Al entrar, Constanza sostenía desesperadamente a Victoria por los hombros con ambas manos, agitándola enérgicamente. Victoria tenía los ojos abiertos, pero perdidos sin movimiento alguno, ni siquiera un parpadeo. Toda ella estaba completamente inerte, como si se hubiese congelado. Sus articulaciones, rígidas. Su cuello, sus brazos y piernas firmes como un muñeco de madera. Cuando constató que no se sentían sus latidos ni su respiración, Constanza continuaba gritándole con lágrimas de desesperación en sus mejillas: “¡VICTORIA! ¡REACCIONA!”, Gregorio no sabía qué hacer. Se aventuró a preguntar: “¿Qué le pasó?”
+      </p>
+      <p class="mt-6">
+        “¿¡Cómo voy a saberlo!? ¡No está respirando! ¡Ve a buscar ayuda!” –reprendió Constanza.
+      </p>
+      <p class="mt-6">
+        Tras el par de segundos que le tomó a Gregorio reaccionar y traer a la mente algún nombre de alguien que pudiera ayudar, Victoria parpadeó, sonrió y luego soltó una pequeña risa. “¿Viste, mamá? ¡No me muevo, como una estatua!”
+      </p>
+      <p class="mt-6">
+        Obviamente, a Constanza no le pareció un juego, sino imaginó aterrada que Victoria había experimentado por primera vez una especie de episodio epiléptico o algo similar.
+      </p>
+      <p class="mt-6">
+        Gregorio, por su parte, no estaba aterrado. Estaba consternado, temiendo que quizá Victoria habría heredado algo que la medicina no habría podido explicar.
+      </p>
+      <div class="my-12 text-center">
+        <img
+          src={divider}
+          alt=""
+          class="mx-auto my-12 h-8 opacity-70"
+        />
+        <span class="text-sm uppercase tracking-[0.2em] text-slate-500">
+          Año y medio atrás, cuando la ciudad todavía olía a polvo y muerte.
+        </span>
+      </div>
+      <p class="mt-6">
+        Silencio pesado. Los únicos sonidos provenían del viento golpeando los escombros de la Muy Noble ciudad de Santiago de los Caballeros. A lo lejos, los aullidos y ladridos de los coyotes acechaban desde las afueras. Sus brillantes ojos se veían a la distancia como si se estuviesen proponiendo invadir a los pocos habitantes que quedaban.
+      </p>
+      <p class="mt-6">
+        Al atardecer, Gregorio se adentró al centro de la ciudad. Entrando desde el norte, le produjo un revuelco en el estómago cuando vio la secuencia de puntos de referencia conforme iba bajando de la montaña: el Cerro del Manchén (después conocido como el Cerro de la Cruz), para dar paso al Oratorio de La Merced. Aquí se detuvo para llorar profusamente: fue el lugar donde Celina le giró instrucciones para verse. El convento estaba dilapidado. Tanto, que ya no habían monjes mercedarios a la vista. La fuente, no obstante, había sobrevivido la embestida del terremoto, lo mismo que la iglesia contigua. Gregorio se acercó y acarició la sirena que aún apuntaba en dirección a la recámara de Celina. Ya no había notas, acertijos, cartas. Nada. ¡Cuán frustrado estaba hace apenas unos meses atrás, cuando ardía de impaciencia por ver y escuchar a Celina en carne y hueso! Ya sólo quedaba el eco de su voz en el vacío generado por las ruinas.
+      </p>
+      <p class="mt-6">
+        Igualmente, no pudo contenerse cuando apareció, aún en pie, el testigo ocular más preponderante: el arco de Santa Catalina. De pie, pero con el mástil aún incrustado en los restos del reloj inservible. Aunque aún tuviera su poder de detener el tiempo, de nada serviría ahora que todo había terminado.
+      </p>
+      <p class="mt-6">
+        Aún así, subió de nuevo por medio del claustro. Ya no oponía ninguna resistencia, dado que toda su estructura estaba colapsada. Subió de nuevo las escaleras que lo llevaron al mismo punto donde él y Celina se vieron por primera vez. Fugaz, pero eternamente.
+      </p>
+      <p class="mt-6">
+        Luego de haber permanecido sentado en el puente sollozando con la cabeza entre las rodillas, bajó de nuevo en dirección a la Plaza Real. Sabía que este era territorio restringido. Ignoraba si aún era persona de interés para las autoridades, así que decidió bajar el perfil. Asomó la cabeza por la esquina para ver si la soledad de las calles era interrumpida por algo o alguien, pero nada. Sin embargo, una importante excepción: a lo lejos, El Capitán Mayorga entraba al ayuntamiento. Esta vez, no en una lujosa berlina, sino a pie. Lo escoltaba un séquito de tan solo cuatro soldados de la Compañía de Pardos, y lo que él pudo concluir que era un nuevo alférez.
+      </p>
+      <p class="mt-6">
+        Esperó un tiempo prudencial para asegurarse de que no saldría de nuevo el Capitán, y corrió hacia los restos del edificio contiguo del Palacio de la Capitanía, donde se había llevado a cabo su juicio fallido.
+      </p>
+      <p class="mt-6">
+        Nadie alrededor.
+      </p>
+      <p class="mt-6">
+        Con la confianza que la soledad y la escasa iluminación le brindaban, comenzó a buscar. Piedra tras piedra, trozo tras trozo, pieza tras pieza. Moviendo todo de lugar para encontrar lo que andaba buscando, pero solo encontraba más cascajo. Se dio por vencido ese día, con la convicción de regresar a diario hasta dar con su paradero. Pero antes de irse, vio en la distancia una silueta diluida en negro por la hora de la penumbra. La vio porque sintió la mirada: la silueta pertenecía a alguien que estaba vigilándolo. Quiso gritarle para llamar su atención, pero concluyó que llamaría la atención del Capitán o sus soldados. Por lo que prefirió correr en su dirección, pero la persona salió corriendo más rápido que él.
+      </p>
+      <p class="mt-6">
+        Lo dejó pasar.
+      </p>
+      <p class="mt-6">
+        Ahora bien, siendo ya tarde y adentrándose en la noche, decidió buscar en otra ocasión.
+      </p>
+      <p class="mt-6">
+        Al atardecer siguiente, continuó su búsqueda. La había limitado a una circunferencia de no más de 30 metros de diámetro, pero seguía buscando con el mismo esmero. No obstante, tuvo que abandonar la búsqueda igual que el día anterior. También se repitió la presencia de aquella figura indivisible en la distancia, y nuevamente corrió infructuosamente en su dirección. La figura corría más rápido que él.
+      </p>
+      <p class="mt-6">
+        Tercer y cuarto atardecer: el mismo resultado. Sin embargo, notó que el orden que él estaba siguiendo había sido roto: alguien también estaba buscando en su ausencia. Y nuevamente, la silueta al final de la jornada, vigilándolo. Esta vez, la ignoró y continuó al día siguiente.
+      </p>
+      <p class="mt-6">
+        Al quinto atardecer, decidió salirse de la circunferencia para ampliar su radio de búsqueda. Era todo lo que necesitaba. Desenterró los últimos escombros hasta que asomó bajo la tierra su preciada búsqueda. Pero aquella silueta se desprendió de la distancia, corriendo intempestivamente hacia Gregorio y con la esquina de su ojo sintió la proximidad. Venía abalanzándose sobre él la figura no identificada, y de lleno comenzó a lanzarle golpes sin detenerse. Gregorio dejó por un lado su búsqueda y se defendió, pero también arremetió contra la figura, protegiendo lo que había encontrado. Dada la fuerza de su atacante, pudo identificar que era un hombre, pero estaba cubierto de pies a cabeza y ya era de noche.
+      </p>
+      <p class="mt-6">
+        Tras varios minutos de forcejeos incesantes, se oyó una voz que venía del Palacio de la Capitanía. Era un soldado que había escuchado la trifulca y gritó: “¡OIGAN! ¿¡QUÉ PASA ALLÍ!?” Al instante, Gregorio y su atacante se empujaron y cada uno salió corriendo a toda velocidad en direcciones opuestas.
+      </p>
+      <p class="mt-6">
+        Luego de no menos de un kilómetro de carrera, Gregorio sólo volteó a ver para asegurarse si aún era perseguido. Jadeando por el cansancio y con su botín entre sus manos, pudo constatar que ni su atacante ni los soldados del Capitán venían tras él. Sin embargo, aún no estaba en un lugar seguro. Debía continuar la marcha, pero antes de adentrarse en el bosque, revisó la bolsa de cuero que traía entre las manos y verificó lo más pronto que pudo. Todos y cada uno de los relojes de don Cristóbal estaban intactos y en su poder.
+      </p>
+      <hr class="my-12 border-slate-300 dark:border-slate-700" />
+
+      <p class="text-center text-xl italic">
+        La historia continúa en
+      </p>
+
+      <h3 class="mt-2 text-center font-serif text-4xl">
+        Un Bolsillo de Estrellas
+      </h3>
+    </article>
+  </section>
+
+  <Features2
+    id='avances'
+    title='Avances de <em>Un Bolsillo de Estrellas</em>'
+    subtitle='La historia de Gregorio no terminó en 1773. <br>
+    Durante más de dos siglos, las consecuencias de sus decisiones continuaron propagándose a través del tiempo.'
+    tagline='Expediente en preparación'
+    items={[
+      {
+        title: 'Victoria',
+        description: "<strong>La hija que heredó algo imposible.</strong><br><br> Una mujer en una búsqueda frenética, aunque para lograrlo deba perseguir huellas dispersas a lo largo de generaciones enteras.",
+        icon: 'tabler:woman',
+      },
+      {
+        title: 'La Familia',
+        description: "<strong>Los que no olvidaron.</strong><br><br>Los descendientes de la figura enigmática. Unos dudan, otros creen. Pero también hay fanáticos. Y no dejarán que nadie se interponga.",
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'El Botín',
+        description: '<strong>Lo que nadie debió haber encontrado.</strong><br><br> Su existencia desata un círculo de búsquedas que culminan hasta este mismo día. Avaricia, poder y significado. Todo se resolverá a su debido tiempo.',
+        icon: 'tabler:stopwatch',
+      },
+    ]}
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-white dark:bg-transparent"></div>
+  </Fragment>
+  </Features2>
+</Layout>

@@ -5,7 +5,7 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Archivo del Campanario - Contenido Exclusivo',
+  title: 'Archivos del Campanario - Contenido Exclusivo',
 };
 ---
 
@@ -13,7 +13,7 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Archivo del Campanario"
+    tagline="Archivos del Campanario"
     title="Algunas historias continúan"
   />
   <section class="mx-auto max-w-3xl px-6 pb-12 text-center text-lg leading-relaxed text-slate-700 dark:text-slate-300">
@@ -65,113 +65,46 @@ const metadata = {
     id="request-code-section"
     class="hidden opacity-0 transition-opacity duration-700"
   >
-    <!-- Aquí va tu ContactUs -->
-  </section>
 
-  <section
-    id="exclusive-content"
-    class="hidden opacity-0 transition-opacity duration-1000"
-  >
-    <!-- Aquí va Panza Verde / contenido extra -->
-  </section>
-
-  <script>
-    const validCodes = [
-      'PANZAVERDE1773',
-      'CID-1773-X9K2',
-      'GREGORIO-2026',
-    ];
-
-    const unlockInput = document.getElementById('unlock-code');
-    const unlockButton = document.getElementById('unlock-button');
-    const unlockError = document.getElementById('unlock-error');
-    const exclusiveContent = document.getElementById('exclusive-content');
-
-    const requestButton = document.getElementById('request-code-button');
-    const requestSection = document.getElementById('request-code-section');
-
-    unlockButton?.addEventListener('click', () => {
-      const code = unlockInput.value.trim().toUpperCase();
-
-      if (validCodes.includes(code)) {
-        unlockError.classList.add('hidden');
-        exclusiveContent.classList.remove('hidden');
-
-        setTimeout(() => {
-          exclusiveContent.classList.remove('opacity-0');
-          exclusiveContent.classList.add('opacity-100');
-        }, 50);
-
-        exclusiveContent.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        unlockError.classList.remove('hidden');
-      }
-    });
-
-    requestButton?.addEventListener('click', () => {
-      requestSection.classList.remove('hidden');
-
-      setTimeout(() => {
-        requestSection.classList.remove('opacity-0');
-        requestSection.classList.add('opacity-100');
-      }, 50);
-
-      requestSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-
-  <!-- Solicitud de acceso ******************* -->
+    <!-- Solicitud de acceso ******************* -->
 
    <ContactUs
-    id="form"
-    title="Solicita tu acceso"
-    subtitle="Indica dónde adquiriste tu ejemplar y adjunta una prueba de compra. Puede ser una captura de pantalla, un correo de confirmación o una fotografía de tu factura de compra. Te enviaremos las instrucciones de acceso por correo electrónico."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Nombre',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Correo Electrónico',
-      },
-      {
-        type: 'text',
-        name: 'purchase',
-        label: '¿Dónde adquiriste el libro?',
-      },
-    ]}
-    textarea={{
-      label: 'Información adicional o número de pedido',
-    }}
+      id="form"
+      formName="solicitud-acceso"
+      title="Solicita tu acceso"
+      subtitle="Indica dónde adquiriste tu ejemplar y adjunta una prueba de compra. Puede ser una captura de pantalla, un correo de confirmación o una fotografía de tu factura de compra. Te enviaremos las instrucciones de acceso por correo electrónico."
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Nombre',
+          required: true,
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Correo Electrónico',
+          required: true,
+        },
+        {
+          type: 'text',
+          name: 'purchase',
+          label: '¿Dónde adquiriste el libro?',
+        },
+        {
+          type: 'file',
+          name: 'proof',
+          label: 'Adjunta una imagen o comprobante',
+          accept: 'image/*,.pdf',
+        },
+      ]}
+      textarea={{
+        label: 'Información adicional o número de pedido',
+      }}
+      button="Solicitar acceso"
+    />
 
-  <ContactUs
-    id="form"
-    title="Solicita tu acceso"
-    subtitle="Indica dónde adquiriste tu ejemplar y adjunta una prueba de compra. Puede ser una captura de pantalla, un correo de confirmación o una fotografía de tu factura de compra. Te enviaremos las instrucciones de acceso por correo electrónico."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Nombre',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Correo Electrónico',
-      },
-      {
-        type: 'text',
-        name: 'purchase',
-        label: '¿Dónde adquiriste el libro?',
-      },
-    ]}
-    textarea={{
-      label: 'Información adicional o número de pedido',
-    }}
-  />
+  </section>
 
   <!-- Features2 Widget ************** -->
 
@@ -192,21 +125,45 @@ const metadata = {
         description:
           "Noticias sobre la edición en inglés, Celina's Enigma y la secuela titulada <em>Un Bolsillo de Estrellas</em>.",
       },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
     ]}
   />
+
+  <script>
+    function initUnlockPage() {
+      const validCodes = ['PANZAVERDE1773', 'CID-1773-X9K2', 'GREGORIO-2026'];
+
+      const unlockInput = document.getElementById('unlock-code');
+      const unlockButton = document.getElementById('unlock-button');
+      const unlockError = document.getElementById('unlock-error');
+      const requestButton = document.getElementById('request-code-button');
+      const requestSection = document.getElementById('request-code-section');
+
+      if (!unlockInput || !unlockButton || !unlockError || !requestButton || !requestSection) return;
+
+      unlockButton.onclick = () => {
+        const code = unlockInput.value.trim().toUpperCase();
+
+        if (validCodes.includes(code)) {
+          unlockError.classList.add('hidden');
+          window.location.href = '/panza-verde';
+        } else {
+          unlockError.classList.remove('hidden');
+        }
+      };
+
+      requestButton.onclick = () => {
+        requestSection.classList.remove('hidden');
+
+        setTimeout(() => {
+          requestSection.classList.remove('opacity-0');
+          requestSection.classList.add('opacity-100');
+        }, 50);
+
+        requestSection.scrollIntoView({ behavior: 'smooth' });
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', initUnlockPage);
+    document.addEventListener('astro:page-load', initUnlockPage);
+  </script>
 </Layout>
