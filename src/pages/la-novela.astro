@@ -21,7 +21,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <!-- Hero2 Widget ******************* -->
 
   <Hero
@@ -29,18 +28,13 @@ const metadata = {
     title="Mientras El Tiempo Se Detenga"
     tagline="La Novela"
     actions={[
-      { variant: 'primary',
-      text: 'Compra el libro',
-      href: '/#precio',
-      },
-      { variant: 'secondary',
-      text: 'Lee un fragmento',
-      href: "#fragmento",
-      },
+      { variant: 'primary', text: 'Compra el libro', href: '/#precio' },
+      { variant: 'secondary', text: 'Lee un fragmento', href: '#fragmento' },
     ]}
   >
     <Fragment slot="subtitle">
-      Antigua Guatemala, 1773. Un joven relojero descubre que puede detener el tiempo. Pero cada vez que lo hace, algo irremplazable se pierde.
+      Antigua Guatemala, 1773. Un joven relojero descubre que puede detener el tiempo. Pero cada vez que lo hace, algo
+      irremplazable se pierde.
     </Fragment>
   </Hero>
 
@@ -74,13 +68,14 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Un reloj. Un secreto. Una ciudad suspendida entre el pasado y el presente.</h2>
-      <p>
-        Gregorio Del Cid jamás imaginó que un antiguo reloj ocultaba un secreto capaz de alterar la realidad.
-      </p>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Un reloj. Un secreto. Una ciudad suspendida entre el pasado y el presente.
+      </h2>
+      <p>Gregorio Del Cid jamás imaginó que un antiguo reloj ocultaba un secreto capaz de alterar la realidad.</p>
       <br />
       <p>
-        Mientras la ciudad de Santiago de los Caballeros se prepara para enfrentar los terremotos que cambiarán su destino para siempre, Gregorio deberá decidir cuánto está dispuesto a sacrificar por amor.
+        Mientras la ciudad de Santiago de los Caballeros se prepara para enfrentar los terremotos que cambiarán su
+        destino para siempre, Gregorio deberá decidir cuánto está dispuesto a sacrificar por amor.
       </p>
     </Fragment>
 
@@ -88,7 +83,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
 
   <!-- Features3 Widget ************** -->
 
@@ -100,15 +94,18 @@ const metadata = {
     items={[
       {
         title: 'Una ciudad real',
-        description: 'La historia transcurre en la Antigua Guatemala del siglo XVIII y está inspirada en lugares que aún puedes visitar. Leerás sobre eventos y personajes que existieron pero que viven en un entorno ficticio.',
+        description:
+          'La historia transcurre en la Antigua Guatemala del siglo XVIII y está inspirada en lugares que aún puedes visitar. Leerás sobre eventos y personajes que existieron pero que viven en un entorno ficticio.',
       },
       {
         title: 'Un misterio sobrenatural',
-        description: 'El reloj sobre el arco de Santa Catalina alguna vez fue capaz de detener el tiempo, alterando el destino de todos los que lo rodean y de la percepción que tú tienes de esa ciudad.',
+        description:
+          'El reloj sobre el arco de Santa Catalina alguna vez fue capaz de detener el tiempo, alterando el destino de todos los que lo rodean y de la percepción que tú tienes de esa ciudad.',
       },
       {
         title: 'Personajes inolvidables',
-        description: 'Gregorio, Celina, Don Cristóbal y otros personajes deberán tomar decisiones que los marcarán para siempre. Cuando camines por las calles de la Antigua los recordarás como si los hubieras conocido en persona.',
+        description:
+          'Gregorio, Celina, Don Cristóbal y otros personajes deberán tomar decisiones que los marcarán para siempre. Cuando camines por las calles de la Antigua los recordarás como si los hubieras conocido en persona.',
       },
     ]}
   />
@@ -202,8 +199,7 @@ const metadata = {
       },
       {
         title: '¿Cuántas páginas tiene?',
-        description:
-          'La edición actual cuenta con aproximadamente 260 páginas.',
+        description: 'La edición actual cuenta con aproximadamente 260 páginas.',
       },
       {
         title: '¿Existe una versión en inglés?',
@@ -264,7 +260,8 @@ const metadata = {
       },
       {
         title: 'Lee y vive la historia',
-        description: "Explorar la Antigua Guatemala, caminarla mientras escuchas la historia desenvolverse, será una experiencia inolvidable.",
+        description:
+          'Explorar la Antigua Guatemala, caminarla mientras escuchas la historia desenvolverse, será una experiencia inolvidable.',
       },
     ]}
     image={{
@@ -284,7 +281,6 @@ const metadata = {
       </h3>
     </Fragment>
   </Content>
-
 
   <!-- CallToAction Widget *********** -->
 
@@ -307,6 +303,6 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </CallToAction>  
+  </CallToAction>
   <LeadMagnetModal />
 </Layout>

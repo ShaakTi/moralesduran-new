@@ -11,13 +11,13 @@ import librosMtd from '~/assets/images/libros-MTD.jpg';
 
 const metadata = {
   title: 'Mientras El Tiempo Se Detenga — Marco R. Morales',
-  description: 'Ficción histórica ambientada en La Antigua Guatemala. Siglo XVIII, secretos coloniales, y un reloj que guarda el eco de historias jamás contadas.',
+  description:
+    'Ficción histórica ambientada en La Antigua Guatemala. Siglo XVIII, secretos coloniales, y un reloj que guarda el eco de historias jamás contadas.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-
   <!-- Hero ******************* -->
 
   <Hero
@@ -33,25 +33,24 @@ const metadata = {
         href: '#celinas-enigma',
       },
     ]}
->
+  >
     <Fragment slot="title">
       ¿Qué ocurriría si pudieras<br />
       <span class="text-accent dark:text-white">detener el tiempo?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Muchos concuerdan que pareciera que en la Antigua Guatemala, el tiempo pareciera haberse detenido. <strong>Mientras El Tiempo Se Detenga</strong> mezcla una hermosa historia de amor con misterio y ficción en una aventura donde el tiempo quizá no obedezca las reglas que conocemos.
+      Muchos concuerdan que pareciera que en la Antigua Guatemala, el tiempo pareciera haberse detenido. <strong
+        >Mientras El Tiempo Se Detenga</strong
+      > mezcla una hermosa historia de amor con misterio y ficción en una aventura donde el tiempo quizá no obedezca las reglas
+      que conocemos.
     </Fragment>
   </Hero>
 
   <!-- Foto libros full width ******************* -->
 
   <section class="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] -mt-12 w-screen overflow-hidden md:-mt-20">
-    <img
-      src={librosMtd.src}
-      alt="Mientras El Tiempo Se Detenga — libros impresos"
-      class="h-auto w-full object-cover"
-    />
+    <img src={librosMtd.src} alt="Mientras El Tiempo Se Detenga — libros impresos" class="h-auto w-full object-cover" />
   </section>
 
   <!-- Entra al universo ******************* -->
@@ -85,7 +84,7 @@ const metadata = {
       },
       {
         title: 'Desbloquear contenido oculto',
-        href:'/unlock.html',
+        href: '/unlock.html',
         description:
           'Capítulos extra, escenas inéditas y secretos que solo los lectores más curiosos podrán descubrir. Avances de la secuela que ya se encuentra en desarrollo.',
         icon: 'tabler:key',
@@ -97,7 +96,7 @@ const metadata = {
 
   <Content
     isReversed
-    id='mientras-el-tiempo'
+    id="mientras-el-tiempo"
     tagline="La Novela"
     title="Mientras El Tiempo Se Detenga"
     items={[
@@ -128,7 +127,9 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Qué ocurre cuando el tiempo deja de obedecer sus propias reglas?</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        ¿Qué ocurre cuando el tiempo deja de obedecer sus propias reglas?
+      </h3>
       Te fascinará leer lo que el reloj del Arco de Santa Catalina tuvo el poder de hacer.
     </Fragment>
 
@@ -170,7 +171,10 @@ const metadata = {
       href: '/celinas-enigma',
     }}
   >
-    <Fragment slot="content">Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la ciudad.</Fragment>
+    <Fragment slot="content"
+      >Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá
+      nunca abandonaron la ciudad.</Fragment
+    >
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-(--aw-color-bg-page) dark:bg-transparent"></div>
@@ -191,16 +195,26 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sobre el autor</h3>
-      <p><strong>Marco R. Morales</strong> es escritor, diseñador gráfico y docente de inglés. Nació en El Salvador y vive en Guatemala, donde pasa buena parte del tiempo alternando entre proyectos creativos, enseñanza y nuevas ideas que suelen aparecer en momentos poco convenientes.</p><br />
-      <p><strong>Mientras El Tiempo Se Detenga</strong> surgió de una pregunta sencilla: ¿por qué parece que el tiempo se ha detenido en Antigua? Lo que comenzó como una idea terminó convirtiéndose en el universo que aún está creciendo.</p><br />
-      <p>Aunque su trabajo principal ha estado ligado durante años a la enseñanza del inglés y al diseño, también ha desarrollado aplicaciones móviles, creado ilustraciones y explorado distintas formas de contar historias. Prefiere pensar que la creatividad rara vez se queda dentro de una sola profesión.</p>
+      <p>
+        <strong>Marco R. Morales</strong> es escritor, diseñador gráfico y docente de inglés. Nació en El Salvador y vive
+        en Guatemala, donde pasa buena parte del tiempo alternando entre proyectos creativos, enseñanza y nuevas ideas que
+        suelen aparecer en momentos poco convenientes.
+      </p><br />
+      <p>
+        <strong>Mientras El Tiempo Se Detenga</strong> surgió de una pregunta sencilla: ¿por qué parece que el tiempo se ha
+        detenido en Antigua? Lo que comenzó como una idea terminó convirtiéndose en el universo que aún está creciendo.
+      </p><br />
+      <p>
+        Aunque su trabajo principal ha estado ligado durante años a la enseñanza del inglés y al diseño, también ha
+        desarrollado aplicaciones móviles, creado ilustraciones y explorado distintas formas de contar historias.
+        Prefiere pensar que la creatividad rara vez se queda dentro de una sola profesión.
+      </p>
     </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
 
   <!-- Precios ******************* -->
 

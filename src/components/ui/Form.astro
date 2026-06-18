@@ -8,7 +8,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', f
 <form name={formName} method="POST" data-netlify="true" enctype="multipart/form-data">
   <input type="hidden" name="form-name" value={formName} />
   {
-    inputs.map(
+    inputs?.map(
       ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, accept = '' }) =>
         name && (
           <div class="mb-6">

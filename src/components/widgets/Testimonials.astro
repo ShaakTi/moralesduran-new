@@ -25,7 +25,10 @@ const shuffledTestimonials = [...testimonials].sort(() => Math.random() - 0.5);
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
   <div class="relative">
-    <div data-testimonials-carousel class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-6" >
+    <div
+      data-testimonials-carousel
+      class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-6"
+    >
       {
         shuffledTestimonials &&
           shuffledTestimonials.map(({ title, testimonial, name, job, image }) => (
@@ -68,27 +71,33 @@ const shuffledTestimonials = [...testimonials].sort(() => Math.random() - 0.5);
           ))
       }
     </div>
-      <button
-        type="button"
-        data-testimonials-prev
-        class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
-        aria-label="Previous testimonial"
-      >
-    ‹
-      </button>
+    <button
+      type="button"
+      data-testimonials-prev
+      class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
+      aria-label="Previous testimonial"
+    >
+      ‹
+    </button>
 
-      <button
-        type="button"
-        data-testimonials-next
-        class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
-        aria-label="Next testimonial"
-      >
-        ›
-      </button>
+    <button
+      type="button"
+      data-testimonials-next
+      class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[var(--aw-color-bg-page)]/35 shadow-md px-3 py-2 text-xl cursor-pointer transition-opacity hover:opacity-90"
+      aria-label="Next testimonial"
+    >
+      ›
+    </button>
   </div>
 
-  <div class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[var(--aw-color-bg-page)]/35 to-transparent"></div>
-  <div class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[var(--aw-color-bg-page)]/35 to-transparent"></div>
+  <div
+    class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[var(--aw-color-bg-page)]/35 to-transparent"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[var(--aw-color-bg-page)]/35 to-transparent"
+  >
+  </div>
 
   {
     callToAction && (

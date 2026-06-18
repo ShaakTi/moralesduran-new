@@ -1,5 +1,6 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import type { HTMLInputTypeAttribute } from 'astro/types';
 
 export interface Post {
   /** Unique ID identifying the post. */
@@ -146,7 +147,7 @@ export interface Testimonial {
 }
 
 export interface Input {
-  type?: string;
+  type?: HTMLInputTypeAttribute;
   name?: string;
   label?: string;
   autocomplete?: string;

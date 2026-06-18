@@ -25,11 +25,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const actions = Array.isArray(callToActions)
-  ? callToActions
-  : callToAction
-    ? [callToAction]
-    : [];
+const actions = Array.isArray(callToActions) ? callToActions : callToAction ? [callToAction] : [];
 
 const columnsClass =
   columns === 4
@@ -63,7 +59,7 @@ const columnsClass =
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
-          (actions.length > 0) && (
+          actions.length > 0 && (
             <div class="-mt-7 mb-8 flex flex-wrap gap-x-6 gap-y-2 text-primary">
               {actions.map((action) => (
                 <Button variant="link" {...action} />

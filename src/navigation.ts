@@ -18,7 +18,7 @@ export const headerData = {
       text: 'Extras',
       href: '/unlock.html',
     },
-  ]
+  ],
 };
 
 export const footerData = {
@@ -45,7 +45,10 @@ export const footerData = {
       title: 'Contacto',
       links: [
         { text: 'Escríbeme', href: getPermalink('/contacto') },
-        { text: 'Goodreads', href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws' },
+        {
+          text: 'Goodreads',
+          href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws',
+        },
       ],
     },
   ],
@@ -54,7 +57,11 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'TikTok', icon: 'tabler:brand-tiktok', href: '#' },
-    { ariaLabel: 'Goodreads', icon: 'tabler:book', href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws' },
+    {
+      ariaLabel: 'Goodreads',
+      icon: 'tabler:book',
+      href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws',
+    },
   ],
   footNote: `
     © ${new Date().getFullYear()}. Marco Rolando Morales Durán. Todos los derechos reservados.

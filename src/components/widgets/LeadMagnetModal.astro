@@ -44,9 +44,7 @@ const {
       </p>
 
       <div>
-        <label for="nombre" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">
-          Nombre
-        </label>
+        <label for="nombre" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200"> Nombre </label>
         <input
           id="nombre"
           name="nombre"
@@ -57,9 +55,7 @@ const {
       </div>
 
       <div>
-        <label for="email" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">
-          Email
-        </label>
+        <label for="email" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200"> Email </label>
         <input
           id="email"
           name="email"
@@ -72,21 +68,14 @@ const {
 
       <label class="flex gap-2 text-sm text-gray-600 dark:text-gray-300">
         <input type="checkbox" name="consentimiento" required class="mt-1" />
-        <span>
-          Acepto recibir el PDF y comunicaciones relacionadas con el libro.
-        </span>
+        <span> Acepto recibir el PDF y comunicaciones relacionadas con el libro. </span>
       </label>
 
-      <button
-        type="submit"
-        class="w-full rounded-lg bg-primary px-5 py-3 font-semibold text-white hover:opacity-90"
-      >
+      <button type="submit" class="w-full rounded-lg bg-primary px-5 py-3 font-semibold text-white hover:opacity-90">
         {buttonText}
       </button>
 
-      <p class="text-center text-xs text-gray-500 dark:text-gray-400">
-        No spam. Solo cosas del universo de la novela.
-      </p>
+      <p class="text-center text-xs text-gray-500 dark:text-gray-400">No spam. Solo cosas del universo de la novela.</p>
     </form>
   </div>
 </div>
@@ -98,17 +87,15 @@ const {
 
     if (!modal) return;
 
-    function openModal() {
+    const openModal = () => {
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    }
+    };
 
-    function closeModal() {
+    const closeModal = () => {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      document.body.style.overflow = '';
-    }
+    };
 
     document.addEventListener('click', (event) => {
       const target = event.target;
