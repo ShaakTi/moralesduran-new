@@ -7,12 +7,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import EnigmaGallery from '~/components/widgets/EnigmaGallery.astro';
-import { getPermalink } from '~/utils/permalinks';
 import Gregorio from '~/assets/images/Gregorio.png';
 import SantaCatalina_arco from '~/assets/images/SantaCatalina_arco.jpg';
 import SanAgustin from '~/assets/images/SanAgustin.jpg';
 import StaClara from '~/assets/images/StaClara.jpg';
-import TourPromo from '~/assets/images/CelinasEnigma-Promo.png';
+import TourPromo from '~/assets/images/CelinasEnigmaPromo.png';
 import LeadMagnetModal from '~/components/widgets/LeadMagnetModal.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
@@ -32,7 +31,7 @@ const metadata = {
     actions={[
       { variant: 'primary',
       text: 'Compra el libro',
-      href: getPermalink('/contact#form'),
+      href: '/#precio',
       },
       { variant: 'secondary',
       text: 'Lee un fragmento',
@@ -296,7 +295,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Compra el libro',
-        href: '/',
+        href: '/#precio',
       },
       {
         variant: 'secondary',

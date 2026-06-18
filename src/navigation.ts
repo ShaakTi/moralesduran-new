@@ -26,8 +26,8 @@ export const footerData = {
     {
       title: 'Explora',
       links: [
-        { text: 'Inicio', href: getPermalink('/') },
-        { text: 'La Novela', href: getPermalink('/la-novela') },
+        { text: 'Inicio', href: '/' },
+        { text: 'La Novela', href: '/la-novela' },
         { text: 'El Autor', href: getPermalink('/autor') },
         { text: 'Celina’s Enigma', href: getPermalink('/celinas-enigma') },
         { text: 'Extras', href: getPermalink('/unlock') },

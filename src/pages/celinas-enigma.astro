@@ -8,7 +8,6 @@ import Features from '~/components/widgets/Features.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import { getPermalink } from '~/utils/permalinks';
 import CelinaWalking from '~/assets/images/CelinaWalking.png';
 import LibrosMTD from '~/assets/images/libros-MTD.jpg';
 import EnigmaGallery from '~/components/widgets/EnigmaGallery.astro';
@@ -34,8 +33,9 @@ const metadata = {
     tagline="Una nueva experiencia en Antigua Guatemala"
     actions={[
       { variant: 'primary',
+      target: '_blank',
       text: 'Reserva ahora',
-      href: getPermalink('/contact#form')
+      href: 'https://www.tripadvisor.com/AttractionProductReview-g295366-d34452429-Celina_s_Enigma_A_Storytelling_Walking_Tour_Through_Antigua-Antigua_Sacatepequez_D.html'
       },
       { variant: 'secondary',
       text: 'Lee la novela',
@@ -60,6 +60,14 @@ const metadata = {
           target: '_blank',
           text: 'Instagram',
           href: "https://www.instagram.com/mrmoralesduran/",
+        },
+      },
+      {
+        icon: 'tabler:brand-facebook',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: '#',
         },
       },
     ]}
@@ -247,16 +255,9 @@ const metadata = {
     }}
     callToActions={[
       {
-        target: '_blank',
         text: 'Consigue tu ejemplar',
         icon: 'tabler:chevron-right',
-        href: '#',
-      },
-      {
-        target: '_blank',
-        text: 'Lee un fragmento',
-        icon: 'tabler:chevron-right',
-        href: '#',
+        href: '/la-novela',
       },
     ]}
   >
@@ -315,8 +316,9 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
+        target: '_blank',
         text: 'Reserva mi experiencia',
-        href: '#',
+        href: 'https://www.tripadvisor.com/AttractionProductReview-g295366-d34452429-Celina_s_Enigma_A_Storytelling_Walking_Tour_Through_Antigua-Antigua_Sacatepequez_D.html',
       },
     ]}
   >

@@ -24,8 +24,8 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Lee un fragmento ',
-        href: '#fragmento',
+        text: 'Disfruta la novela',
+        href: '#mientras-el-tiempo',
       },
       {
         variant: 'primary',
@@ -97,6 +97,7 @@ const metadata = {
 
   <Content
     isReversed
+    id='mientras-el-tiempo'
     tagline="La Novela"
     title="Mientras El Tiempo Se Detenga"
     items={[
@@ -119,6 +120,11 @@ const metadata = {
     image={{
       src: '~/assets/images/book-illustration.jpg',
       alt: 'Mientras El Tiempo Se Detenga — ilustración del libro',
+    }}
+    callToAction={{
+      text: 'Conoce la novela',
+      icon: 'tabler:chevron-right',
+      href: '/la-novela',
     }}
   >
     <Fragment slot="content">
@@ -155,8 +161,13 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/celinas-enigma.jpg',
+      src: '~/assets/images/Celinas-enigma.jpg',
       alt: 'Tour narrativo por La Antigua Guatemala — Celina’s Enigma',
+    }}
+    callToAction={{
+      text: 'Vive la experiencia',
+      icon: 'tabler:chevron-right',
+      href: '/celinas-enigma',
     }}
   >
     <Fragment slot="content">Un tour que recorre Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la ciudad.</Fragment>
@@ -197,6 +208,11 @@ const metadata = {
     id="precio"
     title="Elige tu formato"
     subtitle="Compra directamente aquí a mejor precio que en cualquier otra plataforma."
+    callToAction={{
+      text: 'Lee un fragmento',
+      icon: 'tabler:chevron-right',
+      href: '#fragmento',
+    }}
     prices={[
       {
         title: 'E-Book',
