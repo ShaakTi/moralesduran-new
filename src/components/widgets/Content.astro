@@ -25,11 +25,8 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const actions = Array.isArray(callToActions) && callToActions.length > 0
-  ? callToActions
-  : callToAction
-    ? [callToAction]
-    : [];
+const actions =
+  Array.isArray(callToActions) && callToActions.length > 0 ? callToActions : callToAction ? [callToAction] : [];
 
 const columnsClass =
   columns === 4
