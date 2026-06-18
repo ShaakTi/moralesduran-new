@@ -3,12 +3,13 @@ import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
+import type { ImageMetadata } from 'astro';
 
 interface Slide {
   title: string;
   description: string;
   image: {
-    src: any;
+    src: string | ImageMetadata;
     alt: string;
   };
 }
@@ -113,7 +114,7 @@ const {
   const galleries = document.querySelectorAll('[data-enigma-gallery]');
 
   galleries.forEach((gallery) => {
-    const track = gallery.querySelector('[data-track]');
+    const track = document.querySelector('.TU-SELECTOR') as HTMLElement | null;
     const prev = gallery.querySelector('[data-prev]');
     const next = gallery.querySelector('[data-next]');
     const dots = Array.from(gallery.querySelectorAll('[data-dot]'));

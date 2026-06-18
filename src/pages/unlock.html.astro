@@ -141,6 +141,12 @@ const metadata = {
       if (!unlockInput || !unlockButton || !unlockError || !requestButton || !requestSection) return;
 
       unlockButton.onclick = () => {
+        const unlockInput = document.getElementById('unlock-code') as HTMLInputElement | null;
+        if (!unlockInput) return;
+
+        const unlockInput = document.getElementById('unlock-code') as HTMLInputElement | null;
+        if (!unlockInput) return;
+
         const code = unlockInput.value.trim().toUpperCase();
 
         if (validCodes.includes(code)) {

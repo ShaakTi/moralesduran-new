@@ -122,6 +122,7 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  href?: string;
 }
 
 export interface Price {
@@ -145,11 +146,13 @@ export interface Testimonial {
 }
 
 export interface Input {
-  type: HTMLInputTypeAttribute;
-  name: string;
+  type?: string;
+  name?: string;
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  required?: boolean;
+  accept?: string;
 }
 
 export interface Textarea {
@@ -186,6 +189,7 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  formName?: string;
 }
 
 // WIDGETS
@@ -251,4 +255,6 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   callToActions?: string | CallToAction[];
 }
 
-export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {
+  formName?: string;
+}
