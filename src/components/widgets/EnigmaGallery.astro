@@ -109,47 +109,55 @@ const {
 </WidgetWrapper>
 
 <script>
-  const galleries = document.querySelectorAll('[data-enigma-gallery]');
+  function initEnigmaGalleries() {
+    const galleries = document.querySelectorAll('[data-enigma-gallery]');
 
-  galleries.forEach((gallery) => {
-    const track = document.querySelector('.TU-SELECTOR') as HTMLElement | null;
-    const prev = gallery.querySelector('[data-prev]');
-    const next = gallery.querySelector('[data-next]');
-    const dots = Array.from(gallery.querySelectorAll('[data-dot]'));
+    galleries.forEach((gallery) => {
+      if (gallery.getAttribute('data-initialized') === 'true') return;
+      gallery.setAttribute('data-initialized', 'true');
 
-    if (!track || !prev || !next || dots.length === 0) return;
+      const track = gallery.querySelector('[data-track]');
+      const prev = gallery.querySelector('[data-prev]');
+      const next = gallery.querySelector('[data-next]');
+      const dots = Array.from(gallery.querySelectorAll('[data-dot]'));
 
-    let current = 0;
-    const total = dots.length;
+      if (!track || !prev || !next || dots.length === 0) return;
 
-    const updateGallery = () => {
-      track.style.transform = `translateX(-${current * 100}%)`;
+      let current = 0;
+      const total = dots.length;
 
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('bg-primary', index === current);
-        dot.classList.toggle('bg-slate-300', index !== current);
-        dot.classList.toggle('dark:bg-secondary', index === current);
-        dot.classList.toggle('dark:bg-slate-600', index !== current);
-      });
-    };
+      const updateGallery = () => {
+        track.style.transform = `translateX(-${current * 100}%)`;
 
-    prev.addEventListener('click', () => {
-      current = current === 0 ? total - 1 : current - 1;
-      updateGallery();
-    });
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('bg-primary', index === current);
+          dot.classList.toggle('bg-slate-300', index !== current);
+          dot.classList.toggle('dark:bg-secondary', index === current);
+          dot.classList.toggle('dark:bg-slate-600', index !== current);
+        });
+      };
 
-    next.addEventListener('click', () => {
-      current = current === total - 1 ? 0 : current + 1;
-      updateGallery();
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        current = index;
+      prev.addEventListener('click', () => {
+        current = current === 0 ? total - 1 : current - 1;
         updateGallery();
       });
-    });
 
-    updateGallery();
-  });
+      next.addEventListener('click', () => {
+        current = current === total - 1 ? 0 : current + 1;
+        updateGallery();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          current = index;
+          updateGallery();
+        });
+      });
+
+      updateGallery();
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initEnigmaGalleries);
+  document.addEventListener('astro:page-load', initEnigmaGalleries);
 </script>
