@@ -116,7 +116,7 @@ const {
       if (gallery.getAttribute('data-initialized') === 'true') return;
       gallery.setAttribute('data-initialized', 'true');
 
-      const track = gallery.querySelector('[data-track]');
+      const track = gallery.querySelector('[data-track]') as HTMLElement | null;
       const prev = gallery.querySelector('[data-prev]');
       const next = gallery.querySelector('[data-next]');
       const dots = Array.from(gallery.querySelectorAll('[data-dot]'));
