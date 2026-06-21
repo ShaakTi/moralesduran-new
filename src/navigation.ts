@@ -1,5 +1,3 @@
-import { getPermalink } from './utils/permalinks';
-
 export const headerData = {
   links: [
     {
@@ -28,23 +26,23 @@ export const footerData = {
       links: [
         { text: 'Inicio', href: '/' },
         { text: 'La Novela', href: '/la-novela' },
-        { text: 'El Autor', href: getPermalink('/autor') },
-        { text: 'Celina’s Enigma', href: getPermalink('/celinas-enigma') },
-        { text: 'Extras', href: getPermalink('/unlock') },
+        { text: 'El Autor', href: '/#autor' },
+        { text: 'Celina’s Enigma', href: '/celinas-enigma' },
+        { text: 'Extras', href: '/unlock.html' },
       ],
     },
     {
       title: 'La historia',
       links: [
-        { text: 'Mientras El Tiempo Se Detenga', href: getPermalink('/la-novela') },
-        { text: 'Capítulo extra', href: getPermalink('/unlock') },
-        { text: 'El tour en Antigua', href: getPermalink('/tour') },
+        { text: 'Mientras El Tiempo Se Detenga', href: '/la-novela' },
+        { text: 'Capítulo extra', href: '/unlock.html' },
+        { text: 'El tour en Antigua', href: '/celinas-enigma' },
       ],
     },
     {
       title: 'Contacto',
       links: [
-        { text: 'Escríbeme', href: getPermalink('/contacto') },
+        { text: 'Escríbeme', href: '/contact' },
         {
           text: 'Goodreads',
           href: 'https://www.goodreads.com/book/show/44767475-mientras-el-tiempo-se-detenga?ac=1&from_search=true&qid=zzxNUQO0qC&rank=1#?ref=nav_brws',

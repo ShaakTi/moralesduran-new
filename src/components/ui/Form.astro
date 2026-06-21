@@ -5,7 +5,7 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '', formName = 'contact' } = Astro.props;
 ---
 
-<form name={formName} method="POST" data-netlify="true" enctype="multipart/form-data">
+<form name={formName} method="POST" data-netlify="true" enctype="multipart/form-data" action="/gracias">
   <input type="hidden" name="form-name" value={formName} />
   {
     inputs?.map(
