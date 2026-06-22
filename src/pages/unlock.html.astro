@@ -3,6 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import TourPromo from '~/assets/images/CelinasEnigmaPromo.png';
 
 const metadata = {
   title: 'Archivos del Campanario - Contenido Exclusivo',
@@ -108,6 +110,45 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Vive la Experiencia"
+    title="El Enigma de Celina"
+    items={[
+      {
+        title: 'Camina dentro de la historia',
+        description:
+          'Lo que muchos describen como un tour literario, es en realidad toda una experiencia que confluye una historia de amor, misterio y ficción.',
+      },
+      {
+        title: 'Una experiencia inolvidable',
+        description:
+          'Aun si no has leído el libro, este es un fascinante punto de partida para adentrarte en este universo narrativo. Y si ya lo leíste, será un regalo especial que conecta lo que ya leíste con la experiencia de seguir los mismos pasos de Gregorio.',
+      },
+    ]}
+    image={{
+      src: TourPromo,
+      alt: 'Celina´s Enigma walking tour',
+    }}
+    callToAction={{
+      text: 'Vive toda la experiencia',
+      icon: 'tabler:chevron-right',
+      href: '/celinas-enigma',
+    }}
+  >
+    <Fragment slot="content">
+      Para que vivas en carne propia la experiencia que viviste al leer el libro, hemos creado un tour que recorre
+      Antigua Guatemala siguiendo secretos ocultos entre conventos, fachadas y personajes que quizá nunca abandonaron la
+      ciudad.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <script>
     function initUnlockPage() {

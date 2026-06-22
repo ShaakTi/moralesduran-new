@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Reservar tour El Enigma de Celina',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Reservaciones" title="El Enigma de Celina" />
+
+  <ContactUs
+    id="form"
+    formName="reserva-celinas-enigma"
+    title="Formulario de reservación"
+    subtitle="Cuéntame cuándo te gustaría vivir la experiencia y con cuántas personas vendrías. Revisaré disponibilidad y te responderé personalmente para confirmar fecha, horario y detalles."
+    button="Solicitar reserva"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+        placeholder: 'Nombre completo del responsable de la reserva',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+        placeholder: 'Email del responsable de la reserva',
+      },
+      {
+        type: 'tel',
+        name: 'whatsapp',
+        label: 'WhatsApp',
+        placeholder: 'Incluye código de país. Ejemplo: +502 (Guatemala)',
+      },
+      {
+        type: 'date',
+        name: 'fecha',
+        label: 'Fecha deseada',
+      },
+      {
+        type: 'radio',
+        name: 'grupo',
+        label: 'Tipo de reserva',
+        required: true,
+        options: [
+          { label: 'Solo yo', value: '1 persona' },
+          { label: 'Pareja', value: '2 personas' },
+          { label: 'Hasta 6 personas', value: '3-6 personas' },
+          { label: '7 o más personas', value: '7+ personas' },
+        ],
+      },
+      {
+        type: 'radio',
+        name: 'idioma',
+        label: 'Idioma preferido',
+        options: [
+          { label: 'Español', value: 'Español' },
+          { label: 'Inglés', value: 'Inglés' },
+        ],
+      },
+    ]}
+    textarea={{
+      name: 'mensaje',
+      label: 'Mensaje adicional',
+      placeholder:
+        'Cuéntame si tienes alguna pregunta, necesidad especial, horario preferido o detalle que deba saber antes de confirmar la reserva.',
+    }}
+    description="Esta solicitud no confirma automáticamente tu reserva. Te responderé personalmente para validar disponibilidad, coordinar el horario y compartirte los detalles finales de la experiencia. Tu información será utilizada únicamente para gestionar esta reserva."
+  />
+</Layout>

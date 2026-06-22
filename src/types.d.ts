@@ -154,6 +154,10 @@ export interface Input {
   placeholder?: string;
   required?: boolean;
   accept?: string;
+  options?: {
+    label: string;
+    value: string;
+  }[];
 }
 
 export interface Textarea {

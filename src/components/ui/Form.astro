@@ -7,26 +7,51 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', f
 
 <form name={formName} method="POST" data-netlify="true" enctype="multipart/form-data" action="/gracias">
   <input type="hidden" name="form-name" value={formName} />
+  <input type="hidden" name="origen" value={formName} />
   {
     inputs?.map(
-      ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, accept = '' }) =>
+      ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false, accept, options }) =>
         name && (
           <div class="mb-6">
-            {label && (
-              <label for={name} class="block text-sm font-medium">
-                {label}
-              </label>
+            {type === 'radio' && options ? (
+              <fieldset class="mb-6">
+                {label && <legend class="block text-sm font-medium mb-3">{label}</legend>}
+
+                <div class="flex flex-wrap gap-3">
+                  {options.map((option) => (
+                    <label class="flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 px-4 py-3 cursor-pointer hover:border-primary transition">
+                      <input
+                        type="radio"
+                        name={name}
+                        value={option.value}
+                        required={required}
+                        class="h-4 w-4 accent-primary"
+                      />
+                      <span>{option.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            ) : (
+              <>
+                {label && (
+                  <label for={name} class="block text-sm font-medium">
+                    {label}
+                  </label>
+                )}
+
+                <input
+                  type={type}
+                  name={name}
+                  id={name}
+                  autocomplete={autocomplete}
+                  placeholder={placeholder}
+                  required={required}
+                  accept={accept}
+                  class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                />
+              </>
             )}
-            <input
-              type={type}
-              name={name}
-              id={name}
-              autocomplete={autocomplete}
-              placeholder={placeholder}
-              required={required}
-              accept={accept}
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-            />
           </div>
         )
     )
