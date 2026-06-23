@@ -230,11 +230,11 @@ const metadata = {
     prices={[
       {
         title: 'E-Book',
-        subtitle: 'ePub, AZW3 o PDF — entrega inmediata',
-        price: '10.35',
+        subtitle: 'ePub, AZW3 o PDF',
+        price: '9.49',
         period: 'USD',
         items: [
-          { description: 'Formato ePub (Kindle, Apple Books)' },
+          { description: 'Formato ePub' },
           { description: 'Formato AZW3' },
           { description: 'Formato PDF' },
           { description: 'Capítulo extra exclusivo incluido' },
@@ -247,11 +247,11 @@ const metadata = {
       {
         title: 'Copia Física — Guatemala',
         subtitle: 'Envío por courier',
-        price: '160',
+        price: '195',
         period: 'GTQ',
         items: [
           { description: 'Entrega de 2 a 4 días hábiles' },
-          { description: 'Envío por courier en Guatemala' },
+          { description: 'Envío incluido' },
           { description: 'Pago por transferencia Banco Industrial' },
           { description: 'Capítulo extra exclusivo incluido' },
         ],
@@ -264,20 +264,26 @@ const metadata = {
         ribbonTitle: 'Popular',
       },
       {
-        title: 'Copia Física — EE.UU.',
-        subtitle: 'Envío desde Lulu.com',
-        price: '20.50',
+        title: 'Copia Física — Fuera de Guatemala',
+        subtitle: 'Amazon o BiblioManager',
+        price: '23.95',
         period: 'USD',
         items: [
-          { description: 'Impresión y envío desde Lulu.com' },
+          { description: 'Amazon para EE.UU. y Bibiliomanager para España y Latinoamérica' },
           { description: 'Dos semanas de margen de entrega' },
           { description: 'Envío a cualquier dirección en EE.UU.' },
           { description: 'Capítulo extra exclusivo incluido' },
         ],
-        callToAction: {
-          text: 'Comprar en EE.UU.',
-          href: '#',
-        },
+        callToActions: [
+          {
+            text: 'Comprar en EE.UU.',
+            href: 'https://www.amazon.com/dp/9993928232',
+          },
+          {
+            text: 'España y Latinoamérica',
+            href: '#',
+          },
+        ],
       },
     ]}
   />

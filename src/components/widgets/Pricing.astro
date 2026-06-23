@@ -40,6 +40,7 @@ const {
               period,
               items,
               callToAction: itemCallToAction,
+              callToActions = [],
               hasRibbon = false,
               ribbonTitle,
             }) => (
@@ -86,14 +87,11 @@ const {
                         </ul>
                       )}
                     </div>
-                    {itemCallToAction && (
-                      <div class={`flex justify-center`}>
-                        {typeof itemCallToAction === 'string' ? (
-                          <Fragment set:html={callToAction} />
-                        ) : (
-                          callToAction &&
-                          itemCallToAction.href && (
-                            <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...itemCallToAction} />
+                    {(callToActions.length > 0 || itemCallToAction) && (
+                      <div class="flex flex-col items-center justify-center gap-3">
+                        {(callToActions.length > 0 ? callToActions : itemCallToAction ? [itemCallToAction] : []).map(
+                          (action) => (
+                            <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...action} />
                           )
                         )}
                       </div>
