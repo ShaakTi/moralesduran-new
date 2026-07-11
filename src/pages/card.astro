@@ -1,0 +1,37 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Museo from '~/assets/images/museo.png';
+import Hero2 from '~/components/widgets/Hero2.astro';
+
+const metadata = {
+  title: '¡Qué gusto conocerte!',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Mensaje de Marco R. Morales"
+    title="¡Qué gusto conocerte!"
+    subtitle="<p>Esta tarjeta llegó a tus manos. ¡Gracias por aceptar la invitación!</p><br><p>Soy Marco R. Morales y me apasiona contar historias que conectan la ficción con la historia de Guatemala.</p><br><p>Tengo dos rutas que están mutuamente conectadas y se complementan entre sí para hacerte vivir una fascinante historia. Te las ofrezco <em>aquí</em>. Comienza de la manera que prefieras:</p><br>"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Descubre la novela',
+        href: '/la-novela',
+        icon: 'tabler:book',
+      },
+      {
+        variant: 'secondary',
+        text: "Vive Celina's Enigma",
+        href: '/celinas-enigma',
+        icon: 'tabler:map-route',
+      },
+    ]}
+    image={{
+      src: Museo,
+      alt: 'Museo de Arte Colonial – Antigua Guatemala',
+    }}
+  />
+</Layout>
