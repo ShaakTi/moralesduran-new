@@ -11,7 +11,7 @@ metadata:
   title:
     default: 'Marco R. Morales — Autor de Mientras el tiempo se detenga'
     template: '%s — Marco R. Morales'
-  description: "<em>Mientras el tiempo se detenga</em>: una novela de misterio, fantasía y amor imposible ambientada en Antigua Guatemala en 1773. Descubre también El Enigma de Celina, el tour narrativo por las calles de la ciudad, basado en la novela."
+  description: '<em>Mientras el tiempo se detenga</em>: una novela de misterio, fantasía y amor imposible ambientada en Antigua Guatemala en 1773. Descubre también El Enigma de Celina, el tour narrativo por las calles de la ciudad, basado en la novela.'
   robots:
     index: true
     follow: true
