@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Museo from '~/assets/images/SanAgustin-twilight.png';
+import Hero2 from '~/components/widgets/Hero2.astro';
+
+const metadata = {
+  title: '¡Te doy la bienvenida!',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Recibiste una invitación"
+    title="¡Te doy la bienvenida!"
+    subtitle="<p>Pocos visitantes descubren Antigua de esta manera.</p><br><p>Permíteme presentarme. Me llamo Marco Morales. Escribí una novela inspirada en Antigua. Y un día me di cuenta que… la gente no necesita otro 'walking tour'. Necesita una historia. Por eso extraje de la novela lo que se convirtió en el tour <em>Celina's Enigma.</em></p><br><p>No te vayas de Antigua sin haberte enamorado de ella.</p><br>"
+    actions={[
+      { variant: 'secondary', text: 'Más sobre el tour', href: '/celinas-enigma' },
+      { variant: 'primary', text: 'Reserva un espacio', href: '/reservar-celinas-enigma' },
+    ]}
+    image={{
+      src: Museo,
+      alt: 'Store with a Coming Soon sign. Pre-launch Landing Page',
+    }}
+  />
+</Layout>
