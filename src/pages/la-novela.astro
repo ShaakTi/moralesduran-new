@@ -16,6 +16,7 @@ import StaClara from '~/assets/images/SantaClara.png';
 import TourPromo from '~/assets/images/CelinasEnigmaPromo.png';
 import LeadMagnetModal from '~/components/widgets/LeadMagnetModal.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = {
   title: 'Mientras El Tiempo Se Detenga - La Novela',
@@ -163,24 +164,6 @@ const metadata = {
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Comienza la historia ahora mismo"
-    subtitle="Recibe gratuitamente el prólogo y el primer capítulo en tu correo electrónico."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Lee el fragmento',
-        href: '#fragmento',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </CallToAction>
-
   <!-- FAQs Widget **************** -->
 
   <FAQs
@@ -228,6 +211,80 @@ const metadata = {
         title: '¿Existe una continuación?',
         description:
           'Mientras El Tiempo Se Detenga cuenta una historia completa. Sin embargo, el universo narrativo continúa expandiéndose con nuevos proyectos y relatos relacionados con Gregorio y su extraordinario destino.',
+      },
+    ]}
+  />
+
+  <!-- Precios ******************* -->
+
+  <Pricing
+    id="precio"
+    title="Elige tu formato"
+    subtitle="Compra directamente aquí a mejor precio que en cualquier otra plataforma."
+    callToAction={{
+      text: 'Lee un fragmento',
+      icon: 'tabler:chevron-right',
+      href: '#fragmento',
+    }}
+    prices={[
+      {
+        title: 'E-Book',
+        subtitle: 'A través de Amazon',
+        price: '3.99',
+        period: 'USD',
+        items: [
+          { description: '¡Por tiempo LIMITADO!' },
+          { description: 'Disponible de inmediato' },
+          { description: 'Formato Kindle, AZW3' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToAction: {
+          text: 'Comprar E-Book',
+          href: 'https://a.co/d/06VzQhQY',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Limitado',
+      },
+      {
+        title: 'Copia Física — Guatemala',
+        subtitle: 'Envío por courier',
+        price: '179.95',
+        period: 'GTQ',
+        items: [
+          { description: 'Entrega de 2 a 4 días hábiles' },
+          { description: 'Envío incluido' },
+          { description: 'Pago por transferencia Banco Industrial' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToAction: {
+          text: 'Comprar en Guatemala',
+          href: 'https://wa.me/50256383727',
+          target: '_blank',
+        },
+        hasRibbon: false,
+        ribbonTitle: 'Popular',
+      },
+      {
+        title: 'Copia Física — Fuera de Guatemala',
+        subtitle: 'Amazon o BiblioManager',
+        price: '23.95',
+        period: 'USD',
+        items: [
+          { description: 'Amazon para EE.UU. y Bibiliomanager para España y Latinoamérica' },
+          { description: 'Dos semanas de margen de entrega' },
+          { description: 'Envío a cualquier dirección en EE.UU.' },
+          { description: 'Capítulo extra exclusivo incluido' },
+        ],
+        callToActions: [
+          {
+            text: 'Comprar en EE.UU.',
+            href: 'https://www.amazon.com/dp/9993928232',
+          },
+          {
+            text: 'España y Latinoamérica',
+            href: 'https://tinterclick.tinter.com.gt/product/81015/167',
+          },
+        ],
       },
     ]}
   />

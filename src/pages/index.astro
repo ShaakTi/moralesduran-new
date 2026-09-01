@@ -5,7 +5,6 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
 import LeadMagnetModal from '~/components/widgets/LeadMagnetModal.astro';
 import librosMtd from '~/assets/images/libros-MTD.jpg';
 
@@ -78,7 +77,7 @@ const metadata = {
       {
         title: 'Escuchar la canción',
         description:
-          'Una hermosa pieza musical que captura la esencia de la historia. Inspirada en las palabras que Gregorio nunca olvidó',
+          '¡MUY PRONTO! Una hermosa pieza musical que captura la esencia de la historia. Inspirada en las palabras que Gregorio nunca olvidó',
         icon: 'tabler:music',
       },
       {
@@ -214,80 +213,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Precios ******************* -->
-
-  <Pricing
-    id="precio"
-    title="Elige tu formato"
-    subtitle="Compra directamente aquí a mejor precio que en cualquier otra plataforma."
-    callToAction={{
-      text: 'Lee un fragmento',
-      icon: 'tabler:chevron-right',
-      href: '#fragmento',
-    }}
-    prices={[
-      {
-        title: 'E-Book',
-        subtitle: 'A través de Amazon',
-        price: '3.99',
-        period: 'USD',
-        items: [
-          { description: '¡Por tiempo LIMITADO!' },
-          { description: 'Disponible de inmediato' },
-          { description: 'Formato Kindle, AZW3' },
-          { description: 'Capítulo extra exclusivo incluido' },
-        ],
-        callToAction: {
-          text: 'Comprar E-Book',
-          href: 'https://a.co/d/06VzQhQY',
-        },
-        hasRibbon: true,
-        ribbonTitle: 'Limitado',
-      },
-      {
-        title: 'Copia Física — Guatemala',
-        subtitle: 'Envío por courier',
-        price: '179.95',
-        period: 'GTQ',
-        items: [
-          { description: 'Entrega de 2 a 4 días hábiles' },
-          { description: 'Envío incluido' },
-          { description: 'Pago por transferencia Banco Industrial' },
-          { description: 'Capítulo extra exclusivo incluido' },
-        ],
-        callToAction: {
-          text: 'Comprar en Guatemala',
-          href: 'https://wa.me/50256383727',
-          target: '_blank',
-        },
-        hasRibbon: false,
-        ribbonTitle: 'Popular',
-      },
-      {
-        title: 'Copia Física — Fuera de Guatemala',
-        subtitle: 'Amazon o BiblioManager',
-        price: '23.95',
-        period: 'USD',
-        items: [
-          { description: 'Amazon para EE.UU. y Bibiliomanager para España y Latinoamérica' },
-          { description: 'Dos semanas de margen de entrega' },
-          { description: 'Envío a cualquier dirección en EE.UU.' },
-          { description: 'Capítulo extra exclusivo incluido' },
-        ],
-        callToActions: [
-          {
-            text: 'Comprar en EE.UU.',
-            href: 'https://www.amazon.com/dp/9993928232',
-          },
-          {
-            text: 'España y Latinoamérica',
-            href: 'https://tinterclick.tinter.com.gt/product/81015/167',
-          },
-        ],
-      },
-    ]}
-  />
 
   <!-- Testimonios ******************* -->
 

@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = {
   title: 'Reservar tour El Enigma de Celina',
@@ -13,11 +14,36 @@ const metadata = {
 
   <HeroText tagline="Reservaciones" title="El Enigma de Celina" />
 
+  <Pricing
+    id="precio"
+    title="Reserva tu experiencia"
+    subtitle="Un recorrido narrativo por Antigua Guatemala donde la ciudad se convierte en parte de la historia."
+    prices={[
+      {
+        title: "CELINA'S ENIGMA",
+        subtitle: 'Storytelling Walking Tour',
+        price: '35',
+        period: '(USD) por persona',
+        items: [
+          { description: 'Grupos de 2 a 10 personas' },
+          { description: 'Duración aproximada de 3 a 4 horas' },
+          { description: 'Inicio a las 7:00 u 8:00 AM' },
+          { description: 'Un solo tour disponible por día' },
+          { description: 'Pago previo por transferencia o en efectivo antes del tour' },
+        ],
+        callToAction: {
+          text: 'Solicitar reservación',
+          href: '#form',
+        },
+      },
+    ]}
+  />
+
   <ContactUs
     id="form"
     formName="reserva-celinas-enigma"
     title="Formulario de reservación"
-    subtitle="<p>Cuéntame cuándo te gustaría vivir la experiencia y con cuántas personas vendrías. Revisaré disponibilidad y te responderé personalmente para confirmar fecha, horario y detalles.</p><br><p><strong>Detalles importantes:</strong> <ul><li><u>Costo: US$35 por persona</u></li><li>Pago previo por transferencia o en efectivo antes del inicio del tour</li><li>Sólo se hace un tour por día</li><li>Inicio a las 7:00 u 8:00 AM, según tu preferencia</li><li>Duración: entre 3 y 4 horas</li><li>Debes tener la condición física para caminar ese tiempo</li></ul></p>"
+    subtitle="<p>Cuéntame cuándo te gustaría vivir la experiencia y con cuántas personas vendrías. Revisaré disponibilidad y te responderé personalmente para confirmar fecha, horario y detalles.</p>"
     button="Solicitar reserva"
     inputs={[
       {
